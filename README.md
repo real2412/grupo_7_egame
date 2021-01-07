@@ -10,3 +10,7 @@ Publico en general
 Max.-
 Renan.- 
 Santiago.-
+
+### Referencias
+https://jvgamesperu.com.pe/
+Por la tematica
