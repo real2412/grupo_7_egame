@@ -14,15 +14,15 @@ Max:
 - Aficionado de los MMORPG, jugando WoW desde 2018.
 - Empecé a jugar videojuegos a los 10 años (pokémon)y no he parado desde entonces.
 
-Renán:
--
--
--
+Renan:
+- Fanático de los videojuegos de aventura.
+- Entre mis juegos favoritos esta Super Mario World, Legend Of Zelda OoT, Half Life, etc. 
+- Desde muy niño siempre me han atraído los videojuegos y toda la tecnologia que lo rodea.
   
 Santiago: 
--Gamer desde lo 15 años
--gamer Halo 1, 2, 3, 4, 5 entre otros.
--Tutoriales, trucos, online games.
+- Gamer desde lo 15 años
+- gamer Halo 1, 2, 3, 4, 5 entre otros.
+- Tutoriales, trucos, online games.
 
 ### Referencias
 - jvgamesperu.com.pe
