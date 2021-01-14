@@ -38,7 +38,3 @@ Santiago:
 - Knewave : Logo
 
 
-
-
-
-### Un apartado mas \(ò.ó)/
