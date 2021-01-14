@@ -20,9 +20,9 @@ Renán:
 -
   
 Santiago: 
--
--
--
+-Gamer desde lo 15 años
+-gamer Halo 1, 2, 3, 4, 5 entre otros.
+-Tutoriales, trucos, online games.
 
 ### Referencias
 - jvgamesperu.com.pe
