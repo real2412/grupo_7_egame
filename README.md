@@ -1,12 +1,11 @@
-# grupo_7_egame
-
+El grupo_7_egame te da la vienvenida
 ### Descripción del sitio
-Venta de consolas y videojuegos en formato digital.
+Aqui encontraras los videojuegos que necesitas para tu consola, todo el entretenimiento con juegos de accion, suspenso, aventura, on line, y mucho mas al alcance de tus manos. Todo el entretenimiento y diversion en una sola pagina, no importa la consola aqui encontraras lo que buscas, danos el placer de atenderte.
 
 ### Descripción del Publico Objetivo
 - Personas mayores de edad.(Debido a que toda compra será realizada mediante tarjeta de crédito).
-- Jugadores de PC o consola.(NO vendemos juegos para dispositivos mobiles).
-- Personas hispanohablantes.(La página estará en español). 
+- Jugos para consolas.(NO vendemos juegos para dispositivos mobiles ni accesorios).
+- Personas hispanohablantes.(La página estará temporalmente en español). 
 
 ### Descripción Equipo
 Max:
