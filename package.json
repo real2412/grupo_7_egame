@@ -1,0 +1,25 @@
+{
+  "name": "grupo_7_egame",
+  "version": "1.0.0",
+  "description": "### Descripción del sitio Venta de consolas y videojuegos en formato digital.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renansalazar/grupo_7_egame.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renansalazar/grupo_7_egame/issues"
+  },
+  "homepage": "https://github.com/renansalazar/grupo_7_egame#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
