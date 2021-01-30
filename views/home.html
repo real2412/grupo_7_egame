@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="/" class="brand-link">
+                <img src="images/logo.png" alt="logo" width="60px" />
+                <h1 class="brand">EGAME</h1>
+            </a>
+            <ul class="main-header-menu-left">
+                <li>
+                    <a href="#">
+                        Nosotros
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Videojuegos
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Contáctenos
+                    </a>
+                </li>
+            </ul>
+            <ul class="main-header-menu-right">
+                <li>
+                    <button title="Login" class="btn-standard"><i class="fa fa-sign-in-alt"></i>Acceder</button>
+                </li>
+                <li>
+                    <button title="Carrito" class="btn-standard"><i class="fa fa-shopping-cart"></i></button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="titulo">
+            <h1><i class="fa fa-shopping-cart"></i> Carrito de Compras</h1>
+        </section>
+        <section class="lista-prod">
+            <article class="lista-prod-item">
+                <img src="images/logo.png" alt="imagen-producto" />
+                <div class="detail">
+                    <h2>TITULO</h2>
+                    <h3>Categoria</h3>
+                </div>
+                <div class="price">
+                    <div>
+                        <button class="btn-standard btn-delete">Eliminar</button>
+                    </div>
+                    <div class="price-bottom">
+                        <button class="btn-standard btn-count">-</button>
+                        <input type="number" readonly class="control" value="1">
+                        <button class="btn-standard btn-count">+</button>
+                    </div>
+                </div>     
+            </article>
+        </section>
+        <section class="lista-prod">
+            <article class="lista-prod-item">
+                <img src="images/logo.png" alt="imagen-producto" />
+                <div class="detail">
+                    <h2>TITULO 2</h2>
+                    <h3>Categoria</h3>
+                </div>
+                <div class="price">
+                    <div>
+                        <button class="btn-standard btn-delete">Eliminar</button>
+                    </div>
+                    <div class="price-bottom">
+                        <button class="btn-standard btn-count">-</button>
+                        <input type="number" readonly class="control" value="1">
+                        <button class="btn-standard btn-count">+</button>
+                    </div>
+                </div>     
+            </article>
+        </section>
+        <section class="lista-prod">
+            <article class="lista-prod-item">
+                <img src="images/logo.png" alt="imagen-producto" />
+                <div class="detail">
+                    <h2>TITULO 3</h2>
+                    <h3>Categoria</h3>
+                </div>
+                <div class="price">
+                    <div>
+                        <button class="btn-standard btn-delete">Eliminar</button>
+                    </div>
+                    <div class="price-bottom">
+                        <button class="btn-standard btn-count">-</button>
+                        <input type="number" readonly class="control" value="1">
+                        <button class="btn-standard btn-count">+</button>
+                    </div>
+                </div>     
+            </article>
+        </section>
+        <section class="lista-prod pago">
+            <button class="btn-standard"><i class="fa fa-receipt"></i>Pagar</button>
+            <button class="btn-standard"><i class="fa fa-gift"></i>Regalar</button>
+            <div>
+                <a href="#" >Eliminar todos los videojuegos</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section>
+            <i class="fa fa-copyright"></i> EGAME 2021, Todos los derechos reservados.
+        </section>
+    </footer>
+</body>
+</html>
