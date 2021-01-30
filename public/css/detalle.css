@@ -1,63 +1,84 @@
-.titulo h1{
-    margin: 20px 0;
-    text-align: center;
+:root{
+    --color-purpura: #221858;
+    --color-purpura-claro: #857DB1;
+    --color-morado: #381356;
+    --color-azul: #051A38;
+    --color-azul-claro: #4C668C;
+    --color-rojo: #d63c28;
 }
 
-.lista-prod-item {
+.navbar{
+    display: flex;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+    background-color: var(--color-purpura-claro);
+}
+
+.brand-link{
+    color: var(--color-azul);
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    background-color: var(--color-azul-claro);
-    margin: 10px 20px;
+    text-decoration: none;
+    padding: 10px;
 }
 
-.lista-prod-item img{
-    width: 120px;
-    height: 100px;
-    margin: 20px;
+.brand-link img{
+    border-radius: 50%;
+    margin-right: 6px;
 }
 
-.lista-prod-item .detail {
-    text-align: left;
-    flex: 50%;
+.main-header-menu-left,
+.main-header-menu-right{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.main-header-menu-right{
+    flex-basis: 100%;
+    justify-content: flex-end;
+}
+
+
+.main-header-menu-left li a{
+    padding: 24px 25px;
+    background-color: var(--color-purpura);
+    border-left: 1px solid var(--color-purpura-claro);
+    text-decoration: none;
     color: #ffffff;
 }
 
-.btn-delete{
-    background-color: var(--color-rojo);
-    width: 100%;
-}
-
-.lista-prod{
-    max-width: 900px;
-    margin: auto;
-}
-
-.lista-prod-item .price {
-    padding: 20px;
-}
-
-.lista-prod-item input[type=number] {
-    padding: 10px;
+.btn-standard {
+    background-color: var(--color-azul);
     border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 6px;
+}
+
+.btn-standard i{
+    margin: 4px;
+}
+
+footer {
+    margin-top: 20px;
+    background-color: var(--color-azul-claro);
+}
+
+footer section{
+    color: #ffffff;
+    padding: 10px 0;
     text-align: center;
-
-}
-
-
-.price .price-bottom{
-    display: flex;
-    margin-top: 6px;
-}
-
-.price .price-bottom>*{
-    width: 50px;
-}
-
-.pago {
-    text-align: right;
-}
-
-.pago div{
-    margin-top: 6px;
 }
