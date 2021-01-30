@@ -1,0 +1,50 @@
+:root{
+    --color-purpura: #221858;
+    --color-purpura-claro: #857DB1;
+    --color-morado: #381356;
+    --color-azul: #051A38;
+    --color-azul-claro: #4C668C;
+    --color-rojo: #d63c28;
+}
+
+.navbar{
+    display: flex;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+    background-color: var(--color-purpura-claro);
+}
+
+.brand-link{
+    color: var(--color-azul);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.brand-link img{
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+footer {
+    margin-top: 20px;
+    background-color: var(--color-azul-claro);
+}
+
+footer section{
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
