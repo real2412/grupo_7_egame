@@ -7,10 +7,6 @@
     --color-rojo: #d63c28;
 }
 
-.navbar{
-    display: flex;
-}
-
 body{
     font-family: 'Roboto', sans-serif;
 }
@@ -23,6 +19,24 @@ body{
 
 header{
     background-color: var(--color-purpura-claro);
+}
+
+.navbar{
+    display: flex;
+}
+
+.navbar ul{
+    display:none;
+}
+
+.navbar__burger{
+    padding: 10px 10px;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: var(--color-purpura);
+    margin: auto;
+    position: relative;
+    right: 0;
 }
 
 .brand-link{
@@ -81,4 +95,10 @@ footer section{
     color: #ffffff;
     padding: 10px 0;
     text-align: center;
+}
+
+@media (min-width: 1200px){
+    .navbar__burger{
+        display: none;
+    }
 }

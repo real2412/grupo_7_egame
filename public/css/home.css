@@ -1,0 +1,46 @@
+.banner{
+    position: relative;
+    height: 300px;
+    margin: auto;
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+
+.banner__arrow{
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    font-size: 3.2em;
+    height: 50px;
+    justify-content: center;
+    position: absolute;
+    width: 50px;
+}
+
+.banner__arrow_left{
+    left: -25px;
+}
+
+.banner__arrow_right{
+    right: -25px;
+}
+
+.banner__points{
+    position: absolute;
+    bottom: 0px;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+}
+
+.banner__points i{
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.banner__points i:nth-child(1){
+    color: var(--color-purpura-claro);
+}
