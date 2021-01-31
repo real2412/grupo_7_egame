@@ -5,6 +5,7 @@
     --color-azul: #051A38;
     --color-azul-claro: #4C668C;
     --color-rojo: #d63c28;
+    --color-rojo-claro: #e76e5e;
 }
 
 body{
@@ -64,6 +65,9 @@ header{
     justify-content: flex-end;
 }
 
+.main-header-menu-right li{
+    margin: 0px 5px;
+}
 
 .main-header-menu-left li a{
     padding: 24px 25px;
@@ -71,6 +75,12 @@ header{
     border-left: 1px solid var(--color-purpura-claro);
     text-decoration: none;
     color: #ffffff;
+    transition: all 500ms;
+}
+
+.main-header-menu-left li a:hover{
+    background-color: #ffffff;
+    color: var(--color-purpura);
 }
 
 .btn-standard {
@@ -79,11 +89,24 @@ header{
     color: #ffffff;
     cursor: pointer;
     padding: 10px;
-    margin-right: 6px;
+    transition: all 500ms;
+}
+
+.btn-standard:hover{
+    background-color: var(--color-azul-claro);
 }
 
 .btn-standard i{
     margin: 4px;
+}
+
+.btn-delete{
+    background-color: var(--color-rojo);
+    width: 100%;
+}
+
+.btn-delete:hover{
+    background-color: var(--color-rojo-claro);
 }
 
 footer {
@@ -97,7 +120,15 @@ footer section{
     text-align: center;
 }
 
-@media (min-width: 1200px){
+.group_button{
+    margin: 0px 20px;
+}
+
+@media (min-width: 769px){
+    
+}
+
+@media (min-width: 1280px){
     .navbar{
         align-items: center;
         justify-content: flex-start;

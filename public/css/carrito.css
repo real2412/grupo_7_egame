@@ -12,8 +12,8 @@
 }
 
 .lista-prod-item img{
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 150px;
     margin: 20px;
 }
 
@@ -21,11 +21,6 @@
     text-align: left;
     flex: 50%;
     color: #ffffff;
-}
-
-.btn-delete{
-    background-color: var(--color-rojo);
-    width: 100%;
 }
 
 .lista-prod{
@@ -44,14 +39,18 @@
 
 }
 
-
 .price .price-bottom{
     display: flex;
+    flex-wrap: wrap;
     margin-top: 6px;
 }
 
+.sp-msj{
+    display: none;
+}
+
 .price .price-bottom>*{
-    width: 50px;
+    width: 100%;
 }
 
 .pago {
@@ -60,4 +59,23 @@
 
 .pago div{
     margin-top: 6px;
+}
+
+@media (min-width: 481px){
+    .sp-msj{
+        display: inherit;
+    }
+
+    .price .price-bottom{
+        flex-wrap: nowrap;
+    }
+    
+    .price .price-bottom>*{
+        width: 50px;
+    }
+
+    .lista-prod-item img{
+        width: 100px;
+        height: 100px;
+    }
 }

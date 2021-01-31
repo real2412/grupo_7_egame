@@ -107,22 +107,7 @@ main>section{
     margin: 20px;
 }
 
-@media (min-width: 1200px){
-    .banner__arrow{
-        border-radius: 15px;
-        font-size: 2.2em;
-        height: 30px;
-        width: 30px;
-    }
-
-    .banner__arrow_left{
-        left: -20px;
-    }
-    
-    .banner__arrow_right{
-        right: -20px;
-    }
-
+@media (min-width: 481px){
     .lista__items__detalle{
         margin: 0;
     }
@@ -132,7 +117,39 @@ main>section{
     }
 
     .lista__items__detalle{
+        flex-basis: 49%;
+    }
+}
+
+@media (min-width: 769px){
+    .banner {
+        height: 350px;
+    }
+
+    .lista__items__detalle{
         flex-basis: 24%;
+    }
+}
+
+
+@media (min-width: 1280px){
+    .banner {
+        height: 400px;
+    }
+
+    .banner__arrow{
+        border-radius: 15px;
+        font-size: 2.2em;
+        height: 30px;
+        width: 30px;
+    }
+
+    .banner__arrow_left{
+        left: -16px;
+    }
+    
+    .banner__arrow_right{
+        right: -16px;
     }
     
 }
