@@ -1,31 +1,30 @@
 .banner{
     position: relative;
     height: 300px;
-    margin: auto;
-    width: 90%;
     display: flex;
     align-items: center;
 }
 
 .banner__arrow{
+    border: 1px solid red;
     align-items: center;
     background-color: #ffffff;
-    border-radius: 25px;
+    border-radius: 15px;
     cursor: pointer;
     display: flex;
-    font-size: 3.2em;
-    height: 50px;
+    font-size: 2.2em;
+    height: 30px;
     justify-content: center;
     position: absolute;
-    width: 50px;
+    width: 30px;
 }
 
 .banner__arrow_left{
-    left: -25px;
+    left: -12px;
 }
 
 .banner__arrow_right{
-    right: -25px;
+    right: -12px;
 }
 
 .banner__points{
@@ -43,4 +42,97 @@
 
 .banner__points i:nth-child(1){
     color: var(--color-purpura-claro);
+}
+
+.lista__titulo{
+    padding: 20px 0px
+}
+
+main>section{
+    margin: auto;
+    width: 90%;
+}
+
+.lista__items{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lista__items__detalle h3{
+    padding: 10px 5px
+}
+
+.lista__items__detalle{
+    margin-bottom: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+    cursor: pointer;
+    transition: box-shadow 500ms;
+}
+
+.lista__items__detalle:hover{
+    box-shadow: 0px 0px 10px #000000;
+}
+
+.lista__items__detalle img{
+    transition: transform 500ms;
+}
+
+.lista__items__detalle img:hover{
+    transform: rotate(0) scale(1.2);
+}
+
+.lista__items__image{
+    overflow: hidden;
+}
+
+.ant_price{
+    color: red;
+    text-decoration:line-through;
+}
+
+.price{
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.lista__items__detalle p,
+.lista__items__detalle button,
+.lista__items__detalle a {
+    margin: 5px 0;
+}
+ 
+.container-button{
+    text-align: center;
+    margin: 20px;
+}
+
+@media (min-width: 1200px){
+    .banner__arrow{
+        border-radius: 15px;
+        font-size: 2.2em;
+        height: 30px;
+        width: 30px;
+    }
+
+    .banner__arrow_left{
+        left: -20px;
+    }
+    
+    .banner__arrow_right{
+        right: -20px;
+    }
+
+    .lista__items__detalle{
+        margin: 0;
+    }
+
+    .lista__items{
+        justify-content: space-between;
+    }
+
+    .lista__items__detalle{
+        flex-basis: 24%;
+    }
+    
 }

@@ -47,7 +47,7 @@
         </nav>
     </header>
     <main>
-        <div class="banner">
+        <section class="banner">
             <div class="banner__arrow banner__arrow_left">
                 <i class="fas fa-arrow-alt-circle-left"></i>
             </div>
@@ -61,82 +61,106 @@
                 <i class="fas fa-circle"></i>
                 <i class="fas fa-circle"></i>
             </div>
-        </div>
-        <img src="productCart.html">
-        <section class="titulo">
-            <h1><i class="fa fa-shopping-cart"></i> Carrito de Compras</h1>
         </section>
-        <section class="lista-prod">
-            <article class="lista-prod-item">
-                <img src="images/logo.png" alt="imagen-producto" />
-                <div class="detail">
-                    <h2>TITULO</h2>
-                    <h3>Categoria</h3>
-                </div>
-                <div class="price">
-                    <div>
-                        <button class="btn-standard btn-delete">detalle</button>
+        <section class="lista">
+            <h2 class="lista__titulo">Categorias</h2>
+            <div class="lista__items">
+                <article class="lista__items__detalle">
+                    <div class="lista__items__image">
+                        <img src="images/xbox1.jpg" width="100%" alt="imagen de categoria 1">
                     </div>
-                    <div>
-                        <button class="btn-standard btn-delete">Eliminar</button>
+                    <h3>Categoria 1</h3>
+                </article>
+                <article class="lista__items__detalle">
+                    <div class="lista__items__image">
+                        <img src="images/xbox2.jpg" width="100%" alt="imagen de categoria 1">
                     </div>
-                    <div class="price-bottom">
-                        <button class="btn-standard btn-count">-</button>
-                        <input type="number" readonly class="control" value="1">
-                        <button class="btn-standard btn-count">+</button>
+                    <h3>Categoria 2</h3>
+                </article>
+                <article class="lista__items__detalle">
+                    <div class="lista__items__image">
+                        <img src="images/xbox3.jpg" width="100%" alt="imagen de categoria 1">
                     </div>
-                </div>     
-            </article>
+                    <h3>Categoria 3</h3>
+                </article>
+                <article class="lista__items__detalle">
+                    <div class="lista__items__image">
+                        <img src="images/xbox4.jpg" width="100%" alt="imagen de categoria 1">
+                    </div>
+                    <h3>Categoria 4</h3>
+                </article>
+            </div>
         </section>
-        <section class="lista-prod">
-            <article class="lista-prod-item">
-                <img src="images/logo.png" alt="imagen-producto" />
-                <div class="detail">
-                    <h2>TITULO 2</h2>
-                    <h3>Categoria</h3>
-                </div>
-                <div class="price">
-                    <div>
-                        <button class="btn-standard btn-delete">detalle</button>
+        <section class="lista">
+            <h2 class="lista__titulo">Ultimos Lanzamientos</h2>
+            <div class="lista__items">
+                <article class="lista__items__detalle">
+                    <div class="lista__items__image">
+                        <img src="images/ac.jpg" width="100%" alt="imagen de categoria 1">
                     </div>
+                    <p class="ant_price">S/. 120.00</p>
+                    <p class="price">S/. 60.00</p>
                     <div>
-                        <button class="btn-standard btn-delete">Eliminar</button>
-                    </div>
-                    <div class="price-bottom">
-                        <button class="btn-standard btn-count">-</button>
-                        <input type="number" readonly class="control" value="1">
-                        <button class="btn-standard btn-count">+</button>
-                    </div>
-                </div>     
-            </article>
-        </section>
-        <section class="lista-prod">
-            <article class="lista-prod-item">
-                <img src="images/logo.png" alt="imagen-producto" />
-                <div class="detail">
-                    <h2>TITULO 3</h2>
-                    <h3>Categoria</h3>
-                </div>
-                <div class="price">
-                    <div>
-                        <button class="btn-standard btn-delete">detalle</button>
+                        <button class="btn-standard">
+                            <i class="fa fa-shopping-cart"></i>Comprar
+                        </button>
                     </div>
                     <div>
-                        <button class="btn-standard btn-delete">Eliminar</button>
+                        <a href="/detalle">Ver Detalles</a>
                     </div>
-                    <div class="price-bottom">
-                        <button class="btn-standard btn-count">-</button>
-                        <input type="number" readonly class="control" value="1">
-                        <button class="btn-standard btn-count">+</button>
+                </article>
+                <article class="lista__items__detalle">
+                    <div class="lista__items__image">
+                        <img src="images/nightmares.jpg" width="100%" alt="imagen de categoria 1">
                     </div>
-                </div>     
-            </article>
-        </section>
-        <section class="lista-prod pago">
-            <button class="btn-standard"><i class="fa fa-receipt"></i>Pagar</button>
-            <button class="btn-standard"><i class="fa fa-gift"></i>Regalar</button>
-            <div>
-                <a href="#" >Eliminar todos los videojuegos</a>
+                    <p class="ant_price">S/. 110.00</p>
+                    <p class="price">S/. 82.00</p>
+                    <div>
+                        <button class="btn-standard">
+                            <i class="fa fa-shopping-cart"></i>Comprar
+                        </button>
+                    </div>
+                    <div>
+                        <a href="/detalle">Ver Detalles</a>
+                    </div>
+                </article>
+                <article class="lista__items__detalle">
+                    <div class="lista__items__image">
+                        <img src="images/cod.jpg" width="100%" alt="imagen de categoria 1">
+                    </div>
+                    <p class="ant_price">S/. 100.00</p>
+                    <p class="price">S/. 42.00</p>
+                    <div>
+                        <button class="btn-standard">
+                            <i class="fa fa-shopping-cart"></i>Comprar
+                        </button>
+                    </div>
+                    <div>
+                        <a href="/detalle">Ver Detalles</a>
+                    </div>
+                </article>
+                <article class="lista__items__detalle">
+                    <div class="lista__items__image">
+                        <img src="images/mortalcombat.jpg" width="100%" alt="imagen de categoria 1">
+                    </div>
+                    <p class="ant_price">S/. 140.00</p>
+                    <p class="price">S/. 65.00</p>
+                    <div>
+                        <button class="btn-standard">
+                            <i class="fa fa-shopping-cart"></i>Comprar
+                        </button>
+                    </div>
+                    <div>
+                        <a href="/detalle">Ver Detalles</a>
+                    </div>
+                </article>
+            </div>
+            <div class="container-button">
+                <button class="btn-standard">
+                    <h3>
+                        Ver más Videojuegos >
+                    </h3>
+                </button>
             </div>
         </section>
     </main>

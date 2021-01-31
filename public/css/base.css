@@ -22,7 +22,9 @@ header{
 }
 
 .navbar{
+    align-items: center;
     display: flex;
+    justify-content: space-between;
 }
 
 .navbar ul{
@@ -30,13 +32,11 @@ header{
 }
 
 .navbar__burger{
-    padding: 10px 10px;
+    background-color: var(--color-purpura);
     border-radius: 5px;
     color: #ffffff;
-    background-color: var(--color-purpura);
-    margin: auto;
-    position: relative;
-    right: 0;
+    margin-right: 20px;
+    padding: 10px 10px;
 }
 
 .brand-link{
@@ -98,7 +98,16 @@ footer section{
 }
 
 @media (min-width: 1200px){
+    .navbar{
+        align-items: center;
+        justify-content: flex-start;
+    }
+
     .navbar__burger{
         display: none;
+    }
+
+    .navbar ul{
+        display: flex;
     }
 }
