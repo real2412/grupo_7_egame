@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="/" class="brand-link">
+                <img src="images/logo.png" alt="logo" width="60px" />
+                <h1 class="brand">EGAME</h1>
+            </a>
+            <ul class="main-header-menu-left">
+                <li>
+                    <a href="#">
+                        Nosotros
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Videojuegos
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Contáctenos
+                    </a>
+                </li>
+            </ul>
+            <ul class="main-header-menu-right">
+                <li>
+                    <a href="/registro">
+                        <button title="Login" class="btn-standard"><i class="fa fa-sign-in-alt"></i>Únete a Egame</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="/carrito" title="Carrito" class="btn-standard" ><i class="fa fa-shopping-cart"></i></a>
+                </li>
+            </ul>
+            <a href="#" class="navbar__burger">
+                <i class="fas fa-bars"></i>
+            </a>
+        </nav>
+    </header>
+    <main>
+
+        <form action="/" method="POST" class="create-form">
+            <h1>INICIAR SESIÓN</h1>
+            <div class="control-formulario">
+                <label for="usuario"><strong>Usuario o Correo Electrónico: </strong></label>
+                <input type="text" name="usuario" id="usuario" class="control" minlength="6" required>
+            </div>
+            <div class="control-formulario">
+                <label for="pass"><strong>Contraseña: </strong></label>
+                <input type="password" name="pass" id="pass" class="control" required>
+            </div>
+            </div>
+            <div class="group-button">
+                <button type="submit">CONTINUAR</button>
+            </div>
+        </form>
+
+    </main>
+    <footer></footer>
+</body>
+</html>
