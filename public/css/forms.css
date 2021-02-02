@@ -1,23 +1,23 @@
 .form-signup {
-    margin-top: 16px;
-    margin: auto;
-    border: 1px;
+    margin: 50px auto;
+    border: 1px solid #7C01F0;
     padding: 20px 20px;
     width: 308px;
     text-align: center;
     font-size: 14px;
-    background-color: #d3d3d3;
+    color: #ffffff;
+    background-color: #F80CDD;
 }
 
 .form-login {
-    margin-top: 16px;
-    margin: auto;
-    border: 1px;
+    margin: 50px auto;
+    border: 1px solid #7C01F0;
     padding: 20px 20px;
     width: 308px;
     text-align: center;
     font-size: 14px;
-    background-color: #d3d3d3;
+    color: #ffffff;
+    background-color: #F80CDD;
 }
 
 .control {
@@ -56,6 +56,8 @@
 
 .check {
     border: 1px solid #7C01F0;
+    padding: 5px 12px;
+    margin: 5px 0px 15px;
 }
 
 .check:hover {
