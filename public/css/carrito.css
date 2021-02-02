@@ -40,9 +40,10 @@
 }
 
 .price .price-bottom{
-    display: flex;
+    align-content: center;
     flex-wrap: wrap;
     margin-top: 6px;
+    text-align: center;
 }
 
 .sp-msj{

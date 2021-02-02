@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle</title>
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/carrito.css">
     <link rel="stylesheet" href="css/detalle.css">
+    <link rel="stylesheet" href="css/home.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
@@ -56,22 +58,25 @@
             <article class="container-detalle">
                 <img src="images/cod.jpg" alt="imagen-producto" />
                 <section class="datos-detalle">
-                    <div class="lista-pro">
-                        <h2>TITULO</h2>
-                        <h3>Categoria</h3>
-                        <p class = "Descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque placeat dolores molestias ipsa officiis consectetur minima cupiditate! Incidunt, quibusdam laudantium. Vitae ipsa sit enim porro ex eos quia odit consequuntur.</p>
-                        <p class = "precio"> $</p>
+                    <div class="detalle-pro">
+                        <h2>TITULO</h2><br>
+                        <h3>Categoria</h3><br>
+                        <p class = "datos-descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque placeat dolores molestias ipsa officiis consectetur minima cupiditate! Incidunt, quibusdam laudantium. Vitae ipsa sit enim porro ex eos quia odit consequuntur.</p><br>
+                        <p class="ant_price">S/. 110.00</p>
+                        <p class="price">S/. 82.00</p>
                     </div>
-                    <div class="lista-pro">
-                        <div>
-                        <button class="btn-standard btn-delete">Eliminar</button>
+                    <!--<div class="lista-pro">-->
+                        <div class="price">
+                            <div class="price-bottom">
+                                <button class="btn-standard btn-count">-</button>
+                                <input type="number" min="1" readonly class="control-count" value="1">
+                                <button class="btn-standard btn-count">+</button>
+                            </div>
+                            <div>
+                                <button class="btn-standard"><i class="fa fa-shopping-cart"></i><span class="sp-msj">Agregar al carrito</span></button>
+                            </div>
                         </div>
-                        <div class="lista-pro">
-                            <button class="btn-standard btn-count">-</button>
-                            <input type="number" readonly class="control" value="1">
-                            <button class="btn-standard btn-count">+</button>
-                        </div>
-                    </div>
+                    <!--</div>-->
                 </section>
             </article>
         </section>
