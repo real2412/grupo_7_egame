@@ -5,7 +5,7 @@ Venta de consolas y videojuegos en formato digital.
 
 ### Descripción del Publico Objetivo
 - Personas mayores de edad.(Debido a que toda compra será realizada mediante tarjeta de crédito).
-- Jugadores de PC o consola.(NO vendemos juegos para dispositivos mobiles).
+- Jugadores de PC o consola.(No vendemos juegos para dispositivos mobiles).
 - Personas hispanohablantes.(La página estará en español). 
 
 ### Descripción Equipo
@@ -20,8 +20,8 @@ Renan:
 - Desde muy niño siempre me han atraído los videojuegos y toda la tecnologia que lo rodea.
   
 Santiago: 
-- Gamer desde lo 15 años
-- gamer Halo 1, 2, 3, 4, 5 entre otros.
+- Gamer desde los 15 años
+- Gamer Halo 1, 2, 3, 4, 5 entre otros.
 - Tutoriales, trucos, online games.
 
 ### Referencias
@@ -32,9 +32,6 @@ Santiago:
 
 ### Software
 - wireframe.cc (wireframes)
-- brandcrowd.com (logo)
 
-### Font
-- Knewave : Logo
-
-
+### Tablero de Trabajo
+- Trello : https://trello.com
