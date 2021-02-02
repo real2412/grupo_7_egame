@@ -9,7 +9,7 @@ app.listen(3000, ()=>{
 })
 
 app.get("/", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/home.html"))
+    res.sendFile(path.resolve(__dirname, "./views/index.html"))
 })
 
 app.get("/iniciar-sesion", (req, res) => {
@@ -17,7 +17,7 @@ app.get("/iniciar-sesion", (req, res) => {
 })
 
 app.get("/registro", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/signup.html"))
+    res.sendFile(path.resolve(__dirname, "./views/register.html"))
 })
 
 app.get("/carrito", (req, res) => {
@@ -25,5 +25,5 @@ app.get("/carrito", (req, res) => {
 })
 
 app.get("/detalle", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/detalle.html"))
+    res.sendFile(path.resolve(__dirname, "./views/productDetail.html"))
 })
