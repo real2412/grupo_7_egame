@@ -10,103 +10,40 @@
 - Fuente metodología: https://proyectosagiles.org/2009/06/14/retrospectiva-estrella-mar-starfish-retrospective-scrum/
 
  ### 1. Start doing
-Aquí van todas aquellas cosas innovadoras o que por cierta curiosidad queremos probar. O tal vez son soluciones comprobadas que notamos que deberíamos usar. Por ejemplo usar una wiki para la comunicación o repositorio interno.
-
 
 ```html
-- rergrgrgerg
-- ergrgrrtrth
-- rthrhrth
+- Uso de estandar de comentario en los Commits.
+- Implementación de preprosadores de css como scss o sass.
+- Nomenclatura unificada de los nombres de clases.
 ```
 
-```html
-- gergergeregereg
-- rergrgrg
-```
-
-```html
-- gergergeregereg
-- rergrgrg
-``` 
  
  ### 2. More of
-Es decir que los [Start Doing] se convertirán en [More of]. Esto significa aquellas cosas que estamos usando o haciendo y que queremos que mejoren. Son practicas que creemos que requiere mas refinamiento y que nos gustan mucho por ello hay que darles mas.
 
 ```html
-- rergrgrgerg
-- ergrgrrtrth
-- rthrhrth
+- Manejo adecuado del tablero de trabajo en Trello.
+- Comandos de git.
+- Maquetacion de la interfaz.
 ```
 
-```html
-- gergergeregereg
-- rergrgrg
-```
-
-```html
-- gergergeregereg
-- rergrgrg
-``` 
- 
  ### 3. Keep doing
-Como secuencia lógica aquello que fue un [More of] llegaría a un nivel de maduración y se convertirá en [Keep Doing]. Es aquello que venimos haciendo y que nos brinda valor. Debemos seguir haciéndolo pero no será preocupación mejorarlo. Está bien como esta.
 
 ```html
-- rergrgrgerg
-- ergrgrrtrth
-- rthrhrth
+- Control de Versiones con Github.
+- Manejo de rutas con express.
 ```
-
-```html
-- gergergeregereg
-- rergrgrg
-```
-
-```html
-- gergergeregereg
-- rergrgrg
-``` 
  
  ### 4. Less of
-En este punto ponemos aquello que tal vez en una retrospectiva fue [Start Doing] pero no nos genero el valor que queriamos. Aquello que intentamos pero no nos dan tanto beneficio como se esperaba. Está bien, démosle como una segunda oportunidad, pero no esta en nuestras prioridades. Tal vez no nos funcione. También puede ser el quitar una parte de una práctica como el reporte de horas mensual o cosas por el estilo, es decir, obligatorias de cumplir pero no nos aportan valor. 
 
 ```html
-- rergrgrgerg
-- ergrgrrtrth
-- rthrhrth
+- El logo.
+- La paleta de colores.
 ```
 
-```html
-- gergergeregereg
-- rergrgrg
-```
 
-```html
-- gergergeregereg
-- rergrgrg
-``` 
  
  ### 5. Stop doing
-En este punto exponemos aquellas practicas que a pesar de ser [Less of] pues podemos eliminarlas. Cuando el equipo ve que no le da valor o simplemente no le gusta una practica puede optar por eliminarla.
 
 ```html
-- rergrgrgerg
-- ergrgrrtrth
-- rthrhrth
+- Horarios de reuniones.
 ```
-
-```html
-- gergergeregereg
-- rergrgrg
-```
-
-```html
-- gergergeregereg
-- rergrgrg
-``` 
-
-Conclusiones
----------------------------
-* fergrgtrtrhtrh
-* ereghhtht
-* ggrgrthrh
