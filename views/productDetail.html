@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle</title>
-    <link rel="stylesheet" href="css/detalle.css">
+    <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/detalle.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -45,33 +45,30 @@
     </header>
     <main>
         <section class="titulo">
-            <h1><i class="fa fa-shopping-cart"></i> Carrito de Compras</h1>
+            <h1>Detalle de producto</h1>
         </section>
         <section class="lista-prod">
-            <article class="lista-prod-item">
-                <img src="images/spiderman.png" alt="imagen-producto" />
-                <div class="detail">
-                    <h2>TITULO</h2>
-                    <h3>Categoria</h3>
-                    <p class = "Descripcion">Descripcion</p>
-                    <p class = "precio"> $</p>
-                </div>
-                <div class="price">
-                    <div>
+            <article class="container-detalle">
+                <img src="images/cod.jpg" alt="imagen-producto" />
+                <section class="datos-detalle">
+                    <div class="lista-pro">
+                        <h2>TITULO</h2>
+                        <h3>Categoria</h3>
+                        <p class = "Descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque placeat dolores molestias ipsa officiis consectetur minima cupiditate! Incidunt, quibusdam laudantium. Vitae ipsa sit enim porro ex eos quia odit consequuntur.</p>
+                        <p class = "precio"> $</p>
+                    </div>
+                    <div class="lista-pro">
+                        <div>
                         <button class="btn-standard btn-delete">Eliminar</button>
+                        </div>
+                        <div class="lista-pro">
+                            <button class="btn-standard btn-count">-</button>
+                            <input type="number" readonly class="control" value="1">
+                            <button class="btn-standard btn-count">+</button>
+                        </div>
                     </div>
-                    <div class="price-bottom">
-                        <button class="btn-standard btn-count">-</button>
-                        <input type="number" readonly class="control" value="1">
-                        <button class="btn-standard btn-count">+</button>
-                    </div>
-                </div>
-        <section class="lista-prod pago">
-            <button class="btn-standard"><i class="fa fa-receipt"></i>Pagar</button>
-            <button class="btn-standard"><i class="fa fa-gift"></i>Regalar</button>
-            <div>
-                <a href="#" >Eliminar todos los videojuegos</a>
-            </div>
+                </section>
+            </article>
         </section>
     </main>
     <footer>

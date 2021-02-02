@@ -1,3 +1,9 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
 :root{
     --color-purpura: #221858;
     --color-purpura-claro: #857DB1;
@@ -15,14 +21,16 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
-*{
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-}
-
 header{
     background-color: var(--color-purpura-claro);
+}
+
+.lista-pro{
+    color: var(--color-red);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px;
 }
 
 .brand-link{
@@ -31,6 +39,11 @@ header{
     align-items: center;
     text-decoration: none;
     padding: 10px;
+}
+
+.detail{
+    border-radius: 50%;
+    margin-right: 6px;
 }
 
 .brand-link img{
@@ -81,4 +94,8 @@ footer section{
     color: #ffffff;
     padding: 10px 0;
     text-align: center;
+}
+
+.container-detalle{
+    display: flex
 }
