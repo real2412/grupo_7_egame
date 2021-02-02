@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Crear tu cuenta</title>
         <link rel="stylesheet" href="css/base.css">
         <link rel="stylesheet" href="css/home.css">
+        <link rel="stylesheet" href="css/forms.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     </head>
@@ -49,35 +50,47 @@
         </nav>
     </header>
     <main>
-        <div class="signup-container">
+        <div class="form-signup">
             <form action="/" method="POST" class="create-form">
-                <h1>CREAR TU CUENTA</h1>
-                <div class="control-formulario">
-                    <label for="usuario"><strong>Usuario: </strong></label>
+                <h1>REGISTRATE</h1>
+                <div class="control-form">
+                    <label for="usuario"><strong>Usuario</strong></label>
+                    <br>
                     <input type="text" name="usuario" id="usuario" class="control" minlength="6" required>
                 </div>
-                <div class="control-formulario">
-                    <label for="usuario"><strong>Correo Electrónico: </strong></label>
+                <div class="control-form">
+                    <label for="usuario"><strong>Correo Electrónico</strong></label>
+                    <br>
                     <input type="email" name="email" id="email" class="control" minlength="6" required>
                 </div>
-                <div class="control-formulario">
-                    <label for="pass"><strong>Contraseña: </strong></label>
-                    <input type="password" name="pass1" id="pass" class="control" minlength="8" required>
+                <div class="control-form">
+                    <label for="pass1"><strong>Contraseña</strong></label>
+                    <br>
+                    <input type="password" name="pass1" id="pass1" class="control" minlength="8" required>
                 </div>
-                <div class="control-formulario">
-                    <label for="pass2"><strong>Confirma tu contraseña: </strong></label>
+                <div class="control-form">
+                    <label for="pass2"><strong>Confirma tu contraseña</strong></label>
+                    <br>
                     <input type="password" name="pass2" id="pass2" class="control" minlength="8" required>
                 </div>
-                <label>
-                    <input type="checkbox" name="categoria" id="checkbox-terminos">
-                    <p>Tengo 13 años o más y acepto los términos de la Política de Privacidad de Egame.</p>
-                </label>
-                <div class="group-button">
-                    <button type="submit">CONTINUAR</button>
+                <div class="control-form">
+                    <div class="check-form">
+                        <input type="checkbox" name="categoria" id="check-terminos" class="check" required>
+                        <label for="check-terminos">Acepto los Términos y Condiciones</label>
+                    </div>
+                </div>
+                <div class="form-button">
+                    <a href="/iniciar-sesion">
+                        <button type="submit" class="btn-form">CONTINUAR</button>
+                    </a>
                 </div>
             </form>
         </div>
     </main>
-    <footer></footer>
+    <footer>
+        <section>
+            <i class="fa fa-copyright"></i> EGAME 2021, Todos los derechos reservados.
+        </section>
+    </footer>
 </body>
 </html>

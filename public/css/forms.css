@@ -1,0 +1,102 @@
+.form-signup {
+    margin-top: 16px;
+    margin: auto;
+    border: 1px;
+    padding: 20px 20px;
+    width: 308px;
+    text-align: center;
+    font-size: 14px;
+    background-color: #d3d3d3;
+}
+
+.form-login {
+    margin-top: 16px;
+    margin: auto;
+    border: 1px;
+    padding: 20px 20px;
+    width: 308px;
+    text-align: center;
+    font-size: 14px;
+    background-color: #d3d3d3;
+}
+
+.control {
+    width: 266px;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: #7C01F0;
+    padding: 5px 12px;
+    margin: 5px 0px 15px;
+}
+
+.control:hover {
+    border-color: #AD0BD9;
+}
+
+.btn-form {
+    background-color: var(--color-azul);
+    border-radius: 5px;
+    color: #ffffff;
+    border: 1px solid #000BA4;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 500ms;
+    width: 50%;
+}
+
+.btn-form:hover{
+    background-color: var(--color-azul-claro);
+}
+
+.check-form {
+    width: 100%;
+    font-size: 12px;
+}
+
+.check {
+    border: 1px solid #7C01F0;
+}
+
+.check:hover {
+    border-color: #AD0BD9;
+}
+
+
+
+/* LOGIN | REGISTRO
+
+.form-login {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.form-signup {
+    background-color: #ebebeb;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.control-form {
+    position: relative;
+}
+
+.control-form label {
+    padding: 0 0.2em;
+    position: absolute;
+    top:-0.5em;
+    left: 1em;
+    background-color: #ffffff;
+}
+
+.control-form input {
+    padding: 0.8em;
+    border-radius: 0.5em;
+    border: 2px solid var(--color-purpura-claro);
+    outline: none;
+}
+*/
