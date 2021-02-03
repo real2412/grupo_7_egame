@@ -36,4 +36,4 @@ Santiago:
 - wireframe.cc (wireframes)
 
 ### Tablero de Trabajo
-- Trello : https://trello.com
+- Trello : https://trello.com/b/rjRydAhS/sprint-2
