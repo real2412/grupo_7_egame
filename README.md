@@ -1,5 +1,7 @@
 # grupo_7_egame
 
+![Captura de Pantalla](https://raw.githubusercontent.com/renansalazar/grupo_7_egame/blob/main/public/images/screenshot.png)
+
 ### Descripción del sitio
 Venta de consolas y videojuegos en formato digital.
 
