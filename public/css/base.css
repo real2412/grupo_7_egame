@@ -113,7 +113,6 @@ header{
 
 .btn-delete{
     background-color: var(--color-rojo);
-    width: 100%;
 }
 
 .btn-delete:hover{
@@ -132,7 +131,12 @@ footer section{
 }
 
 .group_button{
-    margin: 0px 20px;
+    margin: 0px 20px 20px 20px;
+}
+
+.group_button a{
+    margin-bottom: 10px;
+    text-decoration: none;
 }
 
 @media (min-width: 769px){

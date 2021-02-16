@@ -110,6 +110,11 @@ main>section{
     margin: 20px;
 }
 
+.container-button a{
+    text-decoration: none;
+    font-size: 1.4rem;
+}
+
 @media (min-width: 481px){
     .lista__items__detalle{
         margin: 0;

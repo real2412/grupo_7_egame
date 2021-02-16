@@ -3,6 +3,7 @@ const app = express()
 const path = require("path")
 
 app.use(express.static("public"))
+app.set('view engine', 'ejs')
 
 const puerto = process.env.PORT || 3000
 
@@ -11,21 +12,33 @@ app.listen(puerto, ()=>{
 })
 
 app.get("/", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/index.html"))
+    res.render(path.resolve(__dirname, "./views/index.ejs"))
 })
 
 app.get("/iniciar-sesion", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/login.html"))
+    res.render(path.resolve(__dirname, "./views/users/login.ejs"))
 })
 
 app.get("/registro", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/register.html"))
+    res.render(path.resolve(__dirname, "./views/users/register.ejs"))
 })
 
 app.get("/carrito", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/productCart.html"))
+    res.render(path.resolve(__dirname, "./views/products/productCart.ejs"))
+})
+
+app.get("/listado", (req, res) => {
+    res.render(path.resolve(__dirname, "./views/products/productList.ejs"))
+})
+
+app.get("/registrarProducto", (req, res) => {
+    res.render(path.resolve(__dirname, "./views/products/productRegister.ejs"))
+})
+
+app.get("/editarProducto", (req, res) => {
+    res.render(path.resolve(__dirname, "./views/products/productEdit.ejs"))
 })
 
 app.get("/detalle", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/productDetail.html"))
+    res.render(path.resolve(__dirname, "./views/products/productDetail.ejs"))
 })

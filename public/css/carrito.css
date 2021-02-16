@@ -12,8 +12,8 @@
 }
 
 .lista-prod-item img{
-    width: 120px;
-    height: 150px;
+    width: 90px;
+    height: 110px;
     margin: 20px;
 }
 
@@ -21,6 +21,11 @@
     text-align: left;
     flex: 50%;
     color: #ffffff;
+    display: flex;
+}
+
+.lista-prod-item .detail p{
+    display: none;
 }
 
 .lista-prod{
@@ -62,7 +67,22 @@
     margin-top: 6px;
 }
 
+.price a, button{
+    font-size: .9rem;
+    text-decoration: none;
+}
+
 @media (min-width: 481px){
+    .lista-prod-item .detail p{
+        display: inherit;
+        margin: 0 10px;
+    }
+
+    .lista-prod-item img{
+        width: 120px;
+        height: 150px;
+    }
+
     .sp-msj{
         display: inherit;
     }

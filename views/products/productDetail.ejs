@@ -1,0 +1,39 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<link rel="stylesheet" href="css/detalle.css">
+<link rel="stylesheet" href="css/home.css">
+
+    <main>
+        <section class="titulo">
+            <h1>Detalle de producto</h1>
+        </section>
+        <section class="lista-prod">
+            <article class="container-detalle">
+                <img src="images/cod.jpg" alt="imagen-producto" />
+                <section class="datos-detalle">
+                    <div class="detalle-pro">
+                        <h2>TITULO</h2><br>
+                        <h3>Categoria</h3><br>
+                        <p class = "datos-descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque placeat dolores molestias ipsa officiis consectetur minima cupiditate! Incidunt, quibusdam laudantium. Vitae ipsa sit enim porro ex eos quia odit consequuntur.</p><br>
+                        <p class="ant_price">S/. 110.00</p>
+                        <p class="price">S/. 82.00</p>
+                    </div>
+                    <!--<div class="lista-pro">-->
+                        <div class="price">
+                            <div class="price-bottom">
+                                <button class="btn-standard btn-count">-</button>
+                                <input type="number" min="1" readonly class="control-count" value="1">
+                                <button class="btn-standard btn-count">+</button>
+                            </div>
+                            <div>
+                                <a href="/carrito">
+                                    <button class="btn-standard"><i class="fa fa-shopping-cart"></i><span class="sp-msj">Agregar al carrito</span></button>
+                                </a>
+                            </div>
+                        </div>
+                    <!--</div>-->
+                </section>
+            </article>
+        </section>
+    </main>
+<%- include('../partials/footer') %>

@@ -27,7 +27,7 @@
     border-width: 1px;
     border-color: #7C01F0;
     padding: 5px 12px;
-    margin: 5px 0px 15px;
+    margin-top: 5px;
 }
 
 .control:hover {
@@ -42,7 +42,6 @@
     cursor: pointer;
     padding: 10px;
     transition: all 500ms;
-    width: 50%;
 }
 
 .btn-form:hover{
@@ -62,4 +61,18 @@
 
 .check:hover {
     border-color: #AD0BD9;
+}
+
+.control-form{
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.form-button{
+    display: flex;
+    justify-content: center;
+}
+
+.form-button button{
+    margin: 5px;
 }

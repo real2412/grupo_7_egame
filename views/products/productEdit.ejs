@@ -1,0 +1,20 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<link rel="stylesheet" href="css/forms.css">
+    <main>
+        <div class="form-signup">
+            <form action="/" method="POST" class="create-form">
+                <h1>EDICIÓN DE PRODUCTO</h1><br><br>
+                <%- include('../partials/form') %>
+                <div class="form-button">
+                    <a href="/iniciar-sesion">
+                        <button type="submit" class="btn-form">CANCELAR</button>
+                    </a>
+                    <a href="/iniciar-sesion">
+                        <button type="submit" class="btn-form">EDITAR</button>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </main>
+<%- include('../partials/footer') %>
