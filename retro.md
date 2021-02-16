@@ -15,13 +15,13 @@
 - Uso de estandar de comentario en los Commits.
 - Implementación de preprosadores de css como scss o sass.
 - Nomenclatura unificada de los nombres de clases.
+- Adecuada repartición de Roles
 ```
 
  
  ### 2. More of
 
 ```html
-- Manejo adecuado del tablero de trabajo en Trello.
 - Comandos de git.
 - Maquetacion de la interfaz.
 ```
@@ -31,6 +31,7 @@
 ```html
 - Control de Versiones con Github.
 - Manejo de rutas con express.
+- Manejo adecuado del tablero de trabajo en Trello.
 ```
  
  ### 4. Less of
