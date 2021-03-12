@@ -1,0 +1,39 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<link rel="stylesheet" href="css/carrito.css">
+
+    <main>
+        <section class="titulo">
+            <h1><i class="fa fa-list"></i> Listado de Videojuegos</h1>
+        </section>
+        <section class="lista-prod pago">
+            <div class="group_button">
+                <a href="/products/create" class="btn-standard"><i class="fa fa-plus"></i>Registrar Videojuego</a>
+            </div>
+        </section>
+        <% products.forEach(producto=>{ %>
+            <section class="lista-prod">
+                <article class="lista-prod-item">
+                    <img src="<%= producto.image %>" alt="imagen-producto" />
+                    <div class="detail">
+                        <div>
+                            <h2><%= producto.name %></h2>
+                            <h3><%= producto.category %></h3>
+                            <h4>S/. <%= producto.price %></h4>
+                        </div>
+                        <div>
+                            <p>
+                                <%= producto.description %>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="price">
+                        <div>
+                            <a href="/products/<%= producto.id %>" class="btn-standard"><i class="fa fa-eye"></i><span class="sp-msj">Ver detalle</span></a>
+                        </div>
+                    </div>     
+                </article>
+            </section>
+        <% }) %>
+    </main>
+<%- include('../partials/footer') %>

@@ -12,7 +12,6 @@
  ### 1. Start doing
 
 ```html
-- Uso de estandar de comentario en los Commits.
 - Implementación de preprosadores de css como scss o sass.
 - Nomenclatura unificada de los nombres de clases.
 - Adecuada repartición de Roles
@@ -24,6 +23,8 @@
 ```html
 - Comandos de git.
 - Maquetacion de la interfaz.
+- Uso de estandar de comentario en los Commits.
+- La paleta de colores.
 ```
 
  ### 3. Keep doing
@@ -31,14 +32,14 @@
 ```html
 - Control de Versiones con Github.
 - Manejo de rutas con express.
-- Manejo adecuado del tablero de trabajo en Trello.
+- Estandar en los nombres de los ejs.
 ```
  
  ### 4. Less of
 
 ```html
 - El logo.
-- La paleta de colores.
+- Manejo adecuado del tablero de trabajo en Trello.
 ```
 
 

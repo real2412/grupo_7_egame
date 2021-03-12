@@ -1,0 +1,28 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<link rel="stylesheet" href="/css/detalle.css">
+<link rel="stylesheet" href="/css/home.css">
+
+    <main>
+        <section class="titulo">
+            <h1>Detalle de producto</h1>
+        </section>
+        <section class="lista-prod">
+            <article class="container-detalle">
+                <img src="<%= product.image %>" alt="imagen-producto" />
+                <section class="datos-detalle">
+                    <div class="detalle-pro">
+                        <h2><%= product.name %></h2><br>
+                        <h3><%= product.category %></h3><br>
+                        <p class = "datos-descripcion"><%= product.description %></p><br>
+                        <p class="price">S/. <%= product.price %></p>
+                    </div>
+                    <a href="/products/<%= product.id %>/edit" class="btn-standard"><i class="fa fa-edit"></i><span class="sp-msj">Editar</span></a>
+                    <form action="/products/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                        <button class="btn-standard btn-delete"><i class="fa fa-trash"></i><span class="sp-msj">Eliminar</span></button>
+                    </form>
+                </section>
+            </article>
+        </section>
+    </main>
+<%- include('../partials/footer') %>
