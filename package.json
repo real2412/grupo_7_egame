@@ -4,7 +4,7 @@
   "description": "### Descripción del sitio Venta de consolas y videojuegos en formato digital.",
   "main": "index.js",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,8 +18,11 @@
   },
   "homepage": "https://github.com/renansalazar/grupo_7_egame#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.10.0",
     "method-override": "^3.0.0",
     "multer": "^1.4.2"
   },

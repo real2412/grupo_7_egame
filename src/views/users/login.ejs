@@ -1,25 +1,25 @@
 <%- include('../partials/head') %>
 <%- include('../partials/header') %>
-<link rel="stylesheet" href="css/forms.css">
+<link rel="stylesheet" href="/css/forms.css">
     <main>
         <div class="form-login">
-            <form action="/" method="POST" class="create-form">
+            <form action="/users/login" method="POST" class="create-form">
                 <div class="control-form">
                     <h1>INICIAR SESIÓN</h1><br><br>
                 </div>
                 <div class="control-form">
-                    <label for="usuario"><strong>Usuario o Correo Electrónico</strong></label>
+                    <label for="username"><strong>Usuario o Correo Electrónico</strong></label>
                     <br>
-                    <input type="text" name="usuario" id="usuario" class="control" minlength="6" required>
+                    <input type="text" name="username" id="username" class="control" minlength="6" required>
                 </div>
                 <div class="control-form">
-                    <label for="pass"><strong>Contraseña</strong></label>
+                    <label for="password"><strong>Contraseña</strong></label>
                     <br>
-                    <input type="password" name="pass" id="pass" class="control" required>
+                    <input type="password" name="password" id="password" class="control" required>
                 </div>
                 <div class="control-form">
                     <div class="check-form">
-                        <input type="checkbox" name="categoria" id="check-terminos" class="check" required>
+                        <input type="checkbox" name="categoria" id="check-terminos" class="check">
                         <label for="check-terminos">Recordar usuario y contraseña</label>
                     </div>
                 </div>

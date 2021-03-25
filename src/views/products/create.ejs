@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="/css/forms.css">
     <main>
         <div class="form-signup">
-            <form action="/products" method="POST" class="create-form">
+            <form action="/products" method="POST" class="create-form"  enctype="multipart/form-data">
                 <h1>REGISTRO DE PRODUCTO</h1><br><br>
                 <div class="control-form">
                     <label for="usuario"><strong>Nombre del Producto</strong></label>
@@ -42,8 +42,8 @@
                     <input type="text" name="price" id="id_price" class="control" minlength="2" required>
                 </div>
                 <div class="form-button">
-                    <button type="button" class="btn-form">CANCELAR</button>
-                    <button type="submit" class="btn-form">REGISTRAR</button>
+                    <a href="/products" class="btn-form">CANCELAR</a>
+                    <input type="submit" class="btn-form" value="REGISTRAR" />
                 </div>
             </form>
         </div>

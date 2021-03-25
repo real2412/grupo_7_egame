@@ -9,7 +9,15 @@
         </section>
         <section class="lista-prod">
             <article class="container-detalle">
-                <img src="<%= product.image %>" alt="imagen-producto" />
+                <div class="image-container">
+                    <% if(product.image && product.image.includes("http://")){ %>
+                        <img src="<%= product.image %>" alt="imagen-producto" />
+                    <% }else if(product.image){ %>
+                        <img src="/images/products/<%= product.image %>" alt="imagen-producto" />
+                    <% }else{ %>
+                        <img src="/images/products/predeterminado.jpg" alt="imagen-producto" />
+                    <% } %>
+                </div>
                 <section class="datos-detalle">
                     <div class="detalle-pro">
                         <h2><%= product.name %></h2><br>

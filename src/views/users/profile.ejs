@@ -1,0 +1,30 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<link rel="stylesheet" href="/css/forms.css">
+    <main>
+        <div class="form-profile">
+            <form action="/users" method="POST" class="create-form" enctype="multipart/form-data">
+                <h1>Perfil</h1><br><br>
+                <div class="datos">
+                    <div class="datos__avatar">
+                        <div class="control-form">
+                            <img height="100px" src="/images/users/<%=usuario.image%>"/>
+                            <h3 for="username"><strong><%=usuario.username%></strong></h3>
+                        </div>
+                    </div>
+                    <div class="datos__texto">
+                        <div class="control-form">
+                            <label for="first_name"><strong>Primer Nombre: <%=usuario.first_name%></strong></label>
+                        </div>
+                        <div class="control-form">
+                            <label for="last_name"><strong>Primer Apellido: <%=usuario.last_name%></strong></label>
+                        </div>
+                        <div class="control-form">
+                            <label for="email"><strong>Correo Electrónico: <%=usuario.email%></strong></label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+<%- include('../partials/footer') %>

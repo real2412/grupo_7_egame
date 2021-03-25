@@ -9,6 +9,29 @@
     background-color: #F80CDD;
 }
 
+.form-profile {
+    margin: 50px auto;
+    border: 1px solid #7C01F0;
+    padding: 20px 20px;
+    width: 508px;
+    text-align: center;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #F80CDD;
+}
+
+.datos{
+    display: flex;
+}
+
+.datos__avatar h3{
+    text-align: center;
+}
+
+.datos__texto{
+    margin-left: 20px;
+}
+
 .form-login {
     margin: 50px auto;
     border: 1px solid #7C01F0;
@@ -41,6 +64,8 @@
     border: 1px solid #000BA4;
     cursor: pointer;
     padding: 10px;
+    font-size: .9rem;
+    text-decoration: none;
     transition: all 500ms;
 }
 
@@ -73,6 +98,7 @@
     justify-content: center;
 }
 
-.form-button button{
+.form-button button,
+.form-button a{
     margin: 5px;
 }

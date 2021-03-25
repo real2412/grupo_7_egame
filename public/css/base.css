@@ -130,6 +130,10 @@ footer section{
     text-align: center;
 }
 
+.text-error{
+    color: var(--color-rojo)
+}
+
 .group_button{
     margin: 0px 20px 20px 20px;
 }

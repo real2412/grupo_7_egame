@@ -1,6 +1,6 @@
 const mainController = {
     index: (req, res) => {
-        res.render('index')
+        res.render('index', { userLogged: req.session.userLogged })
     },
     iniciarSesion: (req, res) => {
         res.render('users/login')
@@ -8,7 +8,7 @@ const mainController = {
     registro: (req, res) => {
         res.render('users/register')
     },
-    carrito: (req, res) => {0
+    carrito: (req, res) => {
         res.render('products/productCart')
     },
     listado: (req, res) => {

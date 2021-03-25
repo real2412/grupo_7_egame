@@ -11,6 +11,11 @@
     margin-right: 6px;
 }
 
+.titulo{
+    text-align: center;
+    padding: 10px;
+}
+
 .container-detalle{
     display: flex
 }
@@ -34,6 +39,11 @@
     padding-left: 50px;
     padding-right: 75px;
 }
+
 .datos-descripcion {
     text-align: justify;
+}
+
+.image-container{
+    max-width: 50%;
 }

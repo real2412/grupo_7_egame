@@ -24,16 +24,17 @@ const controller = {
 	
 	// Create -  Method to store
 	store: (req, res) => {
-		// Do the magic
+		const ultimoId = products[products.length-1].id
 		const product = {
-							id: products.length+1,
+							id: ultimoId+1,
+							image: req.file.filename,
 							...req.body
 						}
 
 		products.push(product)
-		fs.writeFileSync(productsFilePath, JSON.stringify(products))
-		res.redirect('products/')
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '))
 
+		res.redirect('/products')
 	},
 
 	// Update - Form to edit
@@ -72,7 +73,7 @@ const controller = {
 		const indice = products.findIndex(p=>p.id===producto_id)
 		products.splice(indice, 1)
 		fs.writeFileSync(productsFilePath, JSON.stringify(products))
-		res.redirect('/products')
+		res.redirect('/products/')
 	}
 };
 

@@ -42,12 +42,10 @@
                     <input type="text" name="price" id="id_price" class="control" value="<%= product.price %>" minlength="2" required>
                 </div>
                 <div class="form-button">
-                    <a href="/iniciar-sesion">
-                        <button type="submit" class="btn-form">CANCELAR</button>
+                    <a href="/products/<%= product.id %>" class="btn-form">
+                        CANCELAR
                     </a>
-                    <a href="/iniciar-sesion">
                         <button type="submit" class="btn-form">EDITAR</button>
-                    </a>
                 </div>
             </form>
         </div>
