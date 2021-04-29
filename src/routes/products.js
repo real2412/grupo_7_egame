@@ -31,7 +31,7 @@ router.get('/:id', authMiddleware, productsController.detail);
 
 /*** EDIT ONE PRODUCT ***/ 
 router.get('/:id/edit', authMiddleware, productsController.edit); 
-router.put('/:id', authMiddleware, productsController.update);
+router.put('/:id', upload.single('image'), authMiddleware, productsController.update);
 
 
 /*** DELETE ONE PRODUCT***/ 

@@ -8,12 +8,12 @@
                 <div class="control-form">
                     <label for="usuario"><strong>Nombre del Producto</strong></label>
                     <br>
-                    <input type="text" name="name" id="id_name" class="control" value="" minlength="6" required>
+                    <input type="text" name="nombre" id="id_name" class="control" value="" minlength="6" required>
                 </div>
                 <div class="control-form">
                     <label for="usuario"><strong>Descripción</strong></label>
                     <br>
-                    <input type="text" name="description" id="id_description" class="control" minlength="6" required>
+                    <input type="text" name="descripcion" id="id_description" class="control" minlength="6" required>
                 </div>
                 <div class="control-form">
                     <label for="pass1"><strong>Imagen</strong></label>
@@ -23,23 +23,21 @@
                 <div class="control-form">
                     <label for="pass2"><strong>Categoría</strong></label>
                     <br />
-                    <select id="id_category" name="category">
-                        <option>Aventura</option>
-                        <option>RPG</option>
-                        <option>Pelea</option>
-                        <option>Deportes</option>
-                        <option>Estrategia</option>
+                    <select id="id_category" name="categoria">
+                        <% categorias.forEach((categoria)=>{ %>
+                            <option value="<%=categoria.id%>"><%=categoria.nombre%></option>
+                        <% }) %>
                     </select>
                 </div>
                 <div class="control-form">
                     <label for="pass2"><strong>Tamaño(peso)</strong></label>
                     <br>
-                    <input type="text" name="weight" id="id_weight" class="control" required>
+                    <input type="text" name="length" id="id_weight" class="control" required>
                 </div>
                 <div class="control-form">
                     <label for="pass2"><strong>Precio</strong></label>
                     <br>
-                    <input type="text" name="price" id="id_price" class="control" minlength="2" required>
+                    <input type="text" name="precio" id="id_price" class="control" minlength="2" required>
                 </div>
                 <div class="form-button">
                     <a href="/products" class="btn-form">CANCELAR</a>

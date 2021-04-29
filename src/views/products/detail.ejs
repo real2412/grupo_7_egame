@@ -10,23 +10,23 @@
         <section class="lista-prod">
             <article class="container-detalle">
                 <div class="image-container">
-                    <% if(product.image && product.image.includes("http://")){ %>
-                        <img src="<%= product.image %>" alt="imagen-producto" />
-                    <% }else if(product.image){ %>
-                        <img src="/images/products/<%= product.image %>" alt="imagen-producto" />
+                    <% if(producto.image && producto.image.includes("http://")){ %>
+                        <img src="<%= producto.image %>" alt="imagen-producto" />
+                    <% }else if(producto.image){ %>
+                        <img src="/images/products/<%= producto.image %>" alt="imagen-producto" />
                     <% }else{ %>
                         <img src="/images/products/predeterminado.jpg" alt="imagen-producto" />
                     <% } %>
                 </div>
                 <section class="datos-detalle">
                     <div class="detalle-pro">
-                        <h2><%= product.name %></h2><br>
-                        <h3><%= product.category %></h3><br>
-                        <p class = "datos-descripcion"><%= product.description %></p><br>
-                        <p class="price">S/. <%= product.price %></p>
+                        <h2><%= producto.nombre %></h2><br>
+                        <h3><%= producto.categoria %></h3><br>
+                        <p class = "datos-descripcion"><%= producto.descripcion %></p><br>
+                        <p class="price">S/. <%= producto.precio %></p>
                     </div>
-                    <a href="/products/<%= product.id %>/edit" class="btn-standard"><i class="fa fa-edit"></i><span class="sp-msj">Editar</span></a>
-                    <form action="/products/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                    <a href="/products/<%= producto.id %>/edit" class="btn-standard"><i class="fa fa-edit"></i><span class="sp-msj">Editar</span></a>
+                    <form action="/products/<%= producto.id %>?_method=DELETE" method="POST" style="display: inline-flex">
                         <button class="btn-standard btn-delete"><i class="fa fa-trash"></i><span class="sp-msj">Eliminar</span></button>
                     </form>
                 </section>

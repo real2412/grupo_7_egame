@@ -14,14 +14,18 @@
                     </div>
                     <div class="datos__texto">
                         <div class="control-form">
-                            <label for="first_name"><strong>Primer Nombre: <%=usuario.first_name%></strong></label>
+                            <label for="first_name"><strong>Primer Nombre: <%=usuario.nombre%></strong></label>
                         </div>
                         <div class="control-form">
-                            <label for="last_name"><strong>Primer Apellido: <%=usuario.last_name%></strong></label>
+                            <label for="last_name"><strong>Primer Apellido: <%=usuario.apellido%></strong></label>
                         </div>
                         <div class="control-form">
                             <label for="email"><strong>Correo Electrónico: <%=usuario.email%></strong></label>
                         </div>
+                        <br>
+                        <a href="/users/editar" class="btn-form">
+                            Editar
+                        </a>
                     </div>
                 </div>
             </form>

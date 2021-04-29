@@ -3,46 +3,49 @@
 <link rel="stylesheet" href="/css/forms.css">
     <main>
         <div class="form-signup">
-            <form action="/products/<%= product.id %>/?_method=PUT" method="POST" class="create-form">
+            <form action="/products/<%= producto.id %>/?_method=PUT" method="POST"  enctype="multipart/form-data" class="create-form">
                 <h1>EDICIÓN DE PRODUCTO</h1><br><br>
                 <div class="control-form">
                     <label for="usuario"><strong>Nombre del Producto</strong></label>
                     <br>
-                    <input type="text" name="name" id="id_name" class="control" value="<%= product.name %>" minlength="6" required>
+                    <input type="text" name="nombre" id="id_name" class="control" value="<%= producto.nombre %>" minlength="6" required>
                 </div>
                 <div class="control-form">
                     <label for="usuario"><strong>Descripción</strong></label>
                     <br>
-                    <input type="text" name="description" id="id_description" class="control" value="<%= product.description %>" minlength="6" required>
+                    <input type="text" name="descripcion" id="id_description" class="control" value="<%= producto.descripcion %>" minlength="6" required>
                 </div>
                 <div class="control-form">
                     <label for="pass1"><strong>Imagen</strong></label>
                     <br>
-                    <input type="file" name="image" id="id_image" class="control" value="<%= product.image %>" required>
+                    <input type="file" name="image" id="id_image" class="control" value="<%= producto.image %>" required>
                 </div>
                 <div class="control-form">
                     <label for="pass2"><strong>Categoría</strong></label>
                     <br />
-                    <select id="id_category" name="category">
-                        <option <%= product.category==="Aventura"? "selected": ""%>>Aventura</option>
-                        <option <%= product.category==="RPG"? "selected": ""%>>RPG</option>
-                        <option <%= product.category==="Pelea"? "selected": ""%>>Pelea</option>
-                        <option <%= product.category==="Deportes"? "selected": ""%>>Deportes</option>
-                        <option <%= product.category==="Estrategia"? "selected": ""%>>Estrategia</option>
+                    <select id="id_category" name="categoria">
+                        <% categorias.forEach((categoria)=>{ %>
+                            <option 
+                                value="<%=categoria.id%>" 
+                                <%=producto.categoria_id===categoria.id? "selected":""%> 
+                            >
+                                <%=categoria.nombre%>
+                            </option>
+                        <% }) %>
                     </select>
                 </div>
                 <div class="control-form">
                     <label for="pass2"><strong>Tamaño(peso)</strong></label>
                     <br>
-                    <input type="text" name="weight" id="id_weight" class="control" value="<%= product.weight %>" required>
+                    <input type="text" name="length" id="id_weight" class="control" value="<%= producto.length %>" required>
                 </div>
                 <div class="control-form">
                     <label for="pass2"><strong>Precio</strong></label>
                     <br>
-                    <input type="text" name="price" id="id_price" class="control" value="<%= product.price %>" minlength="2" required>
+                    <input type="text" name="precio" id="id_price" class="control" value="<%= producto.precio %>" minlength="2" required>
                 </div>
                 <div class="form-button">
-                    <a href="/products/<%= product.id %>" class="btn-form">
+                    <a href="/products/<%= producto.id %>" class="btn-form">
                         CANCELAR
                     </a>
                         <button type="submit" class="btn-form">EDITAR</button>

@@ -1,78 +1,86 @@
-const fs = require('fs');
-const path = require('path');
-
-const productsFilePath = path.join(__dirname, '../../public/data/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+let db = require("../../database/models")
 
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
 		// Do the magic
-		res.render('products/list', {products})
+		db.Producto.findAll()
+			.then((productos)=>{
+				res.render('products/list', {productos})
+			})
 	},
 
 	// Detail - Detail from one product
 	detail: (req, res) => {
-		const product = products.find(prod=>req.params.id==prod.id)
-		res.render('products/detail', {product})
+		db.Producto.findByPk(req.params.id)
+			.then(producto=>{
+				res.render('products/detail', {producto})
+			})
 	},
 
 	// Create - Form to create
 	create: (req, res) => {
-		res.render('products/create')
+		db.Categoria.findAll()
+			.then((categorias)=>{
+				res.render('products/create', {categorias})
+			})
 	},
 	
 	// Create -  Method to store
 	store: (req, res) => {
-		const ultimoId = products[products.length-1].id
-		const product = {
-							id: ultimoId+1,
-							image: req.file.filename,
-							...req.body
-						}
-
-		products.push(product)
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '))
+        const usuario = res.locals.userLogged
+		db.Producto.create({
+			nombre: req.body.nombre,
+			descripcion: req.body.descripcion,
+			image: req.file.filename,
+			categoria_id: req.body.categoria,
+			length: req.body.length,
+			precio: req.body.precio,
+			creado_por: usuario.id
+		})
 
 		res.redirect('/products')
 	},
 
 	// Update - Form to edit
 	edit: (req, res) => {
-		const product = products.find(prod=>req.params.id==prod.id)
-		res.render('products/edit', {product})
+		let consultaProducto = db.Producto.findByPk(req.params.id)
+		let consultaCategorias = db.Categoria.findAll()
+
+		Promise.all([consultaProducto, consultaCategorias])
+			.then(([producto, categorias])=>{
+				res.render('products/edit', {producto, categorias})
+			})
 	},
 	// Update - Method to update
 	update: (req, res) => {
-		const producto_id = Number(req.params.id)
-		const {
-			name,
-			description,
-			price,
-			category,
-			weight,
-			image
-		} = req.body
-		const indice = products.findIndex(p=>p.id===producto_id)
-		
-		products[indice].name = name
-		products[indice].description = description
-		products[indice].image = image
-		products[indice].price = price
-		products[indice].weight = weight
-		products[indice].category = category
-		
-		/* products.push(producto) */
-		fs.writeFileSync(productsFilePath, JSON.stringify(products))
-		res.redirect('/products/')
+        const usuario = res.locals.userLogged
+		db.Producto.update({
+			nombre: req.body.nombre,
+			descripcion: req.body.descripcion,
+			image: req.file.filename,
+			categoria_id: req.body.categoria,
+			length: req.body.length,
+			precio: req.body.precio,
+			creado_por: usuario.id
+		},{
+			where: {
+				id: req.params.id
+			}
+		})
+
+		res.redirect('/products/'+req.params.id)
+
 	},
 
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
-		const producto_id = Number(req.params.id)
-		const indice = products.findIndex(p=>p.id===producto_id)
-		products.splice(indice, 1)
-		fs.writeFileSync(productsFilePath, JSON.stringify(products))
+		db.Producto.destroy({
+			where: {
+                id: req.params.id
+            }
+		})
+
 		res.redirect('/products/')
 	}
 };

@@ -27,6 +27,9 @@ router.post("/login", usersController.loginAccess)
 router.get("/register", guestMiddleware, usersController.register)
 router.get("/profile", authMiddleware, usersController.profile)
 
+router.put('/:id', upload.single('image'), validationFormMiddleware, usersController.update);
+router.get("/editar", authMiddleware, usersController.editar)
+
 router.post("/register", upload.single('image'), validationFormMiddleware, usersController.store)
 
 

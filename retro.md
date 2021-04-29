@@ -22,7 +22,7 @@
 
 ```html
 - Comandos de git.
-- Maquetacion de la interfaz.
+- Diseño de la Base de datos
 - Uso de estandar de comentario en los Commits.
 - La paleta de colores.
 ```
@@ -33,6 +33,7 @@
 - Control de Versiones con Github.
 - Manejo de rutas con express.
 - Estandar en los nombres de los ejs.
+- Maquetacion de la interfaz.
 ```
  
  ### 4. Less of

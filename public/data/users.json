@@ -1,6 +1,6 @@
 [
  {
-  "id": 1,
+  "id": 12222222222222222222,
   "firstname": "Allx",
   "lastname": "Wason",
   "email": "awason0@huffingtonpost.com",
@@ -9070,5 +9070,23 @@
   "image": "licuadora-1616693517340.jpg",
   "username": "usuario2",
   "password": "$2a$10$7yvrfNo0buJmMUdxhM1/KeURpdowjHfnjChRPdHFXufOAsybjx2r."
+ },
+ {
+  "id": 1010,
+  "first_name": "Juan",
+  "last_name": "Nieve",
+  "email": "jnieve@correo.com",
+  "image": "licuadora-1619144819067.jpg",
+  "username": "jnieve",
+  "password": "$2a$10$aZQ.oaXNxxHbTcMveHzjgeEsGPeQjl2kq5sztdrbC3yyOn4sYXabe"
+ },
+ {
+  "id": 1,
+  "first_name": "Gerry",
+  "last_name": "Arjona",
+  "email": "garjona@correo.com",
+  "image": "licuadora-1619145872191.jpg",
+  "username": "garjona",
+  "password": "$2a$10$I0ONFNqm/HkYPNqOYwMlJee9X0ED1A8BrjQcynGzOY2YV38xf3l2O"
  }
 ]

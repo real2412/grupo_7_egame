@@ -11,25 +11,25 @@
                 <a href="/products/create" class="btn-standard"><i class="fa fa-plus"></i>Registrar Videojuego</a>
             </div>
         </section>
-        <% products.forEach(producto=>{ %>
+        <% productos.forEach(producto=>{ %>
             <section class="lista-prod">
                 <article class="lista-prod-item">
                     <% if(producto.image && producto.image.includes("http://")){ %>
                         <img src="<%= producto.image %>" alt="imagen-producto" />
                     <% }else if(producto.image){ %>
-                        <img src="images/products/<%= producto.image %>" alt="imagen-producto" />
+                        <img src="/images/products/<%= producto.image %>" alt="imagen-producto" />
                     <% }else{ %>
-                        <img src="images/products/predeterminado.jpg" alt="imagen-producto" />
+                        <img src="/images/products/predeterminado.jpg" alt="imagen-producto" />
                     <% } %>
                     <div class="detail">
                         <div>
-                            <h2><%= producto.name %></h2>
-                            <h3><%= producto.category %></h3>
-                            <h4>S/. <%= producto.price %></h4>
+                            <h2><%= producto.nombre %></h2>
+                            <h3><%= producto.categoria %></h3>
+                            <h4>S/. <%= producto.precio %></h4>
                         </div>
                         <div>
                             <p>
-                                <%= producto.description %>
+                                <%= producto.descripcion %>
                             </p>
                         </div>
                     </div>
