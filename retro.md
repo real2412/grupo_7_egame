@@ -12,35 +12,28 @@
  ### 1. Start doing
 
 ```html
-- Implementación de preprosadores de css como scss o sass.
-- Nomenclatura unificada de los nombres de clases.
-- Adecuada repartición de Roles
+- Calendarizar las tareas.
+- Organizar mejor los tiempos
 ```
 
  
  ### 2. More of
 
 ```html
-- Comandos de git.
-- Diseño de la Base de datos
-- Uso de estandar de comentario en los Commits.
-- La paleta de colores.
+- Ponerse al dia con el playground
+- Preguntar dudas en las clases
 ```
 
  ### 3. Keep doing
 
 ```html
-- Control de Versiones con Github.
-- Manejo de rutas con express.
-- Estandar en los nombres de los ejs.
-- Maquetacion de la interfaz.
+- Realizar la finalización de los sprints en las fechas establecidas.
 ```
  
  ### 4. Less of
 
 ```html
-- El logo.
-- Manejo adecuado del tablero de trabajo en Trello.
+- Hacer los cambios de ultimo momento.
 ```
 
 
@@ -48,5 +41,5 @@
  ### 5. Stop doing
 
 ```html
-- Horarios de reuniones.
+- Horarios de reuniones
 ```
