@@ -13,33 +13,36 @@
 
 ```html
 - Calendarizar las tareas.
-- Organizar mejor los tiempos
+- Organizar mejor los tiempos.
+- Mayor comunicacion.
+- Validar conceptos pasados.
+- Incremetar las reviciones generales o parciales del proyecto (pruebas).
 ```
 
  
  ### 2. More of
 
 ```html
-- Ponerse al dia con el playground
-- Preguntar dudas en las clases
+- Ponerse al dia con las tareas asignadas dentro del proyecto.
+- Preguntar dudas acerca del proyecto en las clases.
 ```
 
  ### 3. Keep doing
 
 ```html
-- Realizar la finalización de los sprints en las fechas establecidas.
+- Usar ejemplos en descripciones o productos de mala calidad.
 ```
  
  ### 4. Less of
 
 ```html
 - Hacer los cambios de ultimo momento.
+- La falta de comunicacion dentro del equipo. 
 ```
-
 
  
  ### 5. Stop doing
 
 ```html
-- Horarios de reuniones
+- Poca frecuencia de las reuniones.
 ```
