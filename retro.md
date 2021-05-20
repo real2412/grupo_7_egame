@@ -12,10 +12,8 @@
  ### 1. Start doing
 
 ```html
-- Calendarizar las tareas.
-- Organizar mejor los tiempos.
-- Mayor comunicacion.
-- Validar conceptos pasados.
+- Terminar las tareas opcionales en sprint anteriores.
+- Organizar mejor el codigo. 
 - Incremetar las reviciones generales o parciales del proyecto (pruebas).
 ```
 
@@ -25,24 +23,28 @@
 ```html
 - Ponerse al dia con las tareas asignadas dentro del proyecto.
 - Preguntar dudas acerca del proyecto en las clases.
+- Validar conceptos pasados.
 ```
+
 
  ### 3. Keep doing
 
 ```html
 - Usar ejemplos en descripciones o productos de mala calidad.
+- Organizar mejor los tiempos.
+- Manter un canal de comunicacion abierto permanentemente. 
+- Evaluar el funcinamiento de la App.
 ```
  
  ### 4. Less of
 
 ```html
 - Hacer los cambios de ultimo momento.
-- La falta de comunicacion dentro del equipo. 
+- Cambios inesesarios en el codigo.
 ```
 
- 
  ### 5. Stop doing
 
 ```html
-- Poca frecuencia de las reuniones.
+- Atascar el proyecto por minucias y detalles irrelevantes.
 ```
