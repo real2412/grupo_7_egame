@@ -1,4 +1,5 @@
 let db = require("../../database/models")
+const { validationResult } = require("express-validator")
 
 const controller = {
 	// Root - Show all products
@@ -28,18 +29,32 @@ const controller = {
 	
 	// Create -  Method to store
 	store: (req, res) => {
-        const usuario = res.locals.userLogged
-		db.Producto.create({
-			nombre: req.body.nombre,
-			descripcion: req.body.descripcion,
-			image: req.file.filename,
-			categoria_id: req.body.categoria,
-			length: req.body.length,
-			precio: req.body.precio,
-			creado_por: usuario.id
-		})
+		const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+			db.Categoria.findAll()
+				.then((categorias)=>{
+					console.log(req.body);
+					return res.render('products/create', {
+						categorias,
+						oldData: req.body,
+						errors: resultValidation.mapped()
+					});
+				})
+		}else{
+			const usuario = res.locals.userLogged
+			db.Producto.create({
+				nombre: req.body.nombre,
+				descripcion: req.body.descripcion,
+				image: req.file.filename,
+				categoria_id: req.body.categoria,
+				length: req.body.length,
+				precio: req.body.precio,
+				creado_por: usuario.id
+			}).then(()=>{
+				res.redirect('/products')
+			})
+		}
 
-		res.redirect('/products')
 	},
 
 	// Update - Form to edit
@@ -54,22 +69,38 @@ const controller = {
 	},
 	// Update - Method to update
 	update: (req, res) => {
-        const usuario = res.locals.userLogged
-		db.Producto.update({
-			nombre: req.body.nombre,
-			descripcion: req.body.descripcion,
-			image: req.file.filename,
-			categoria_id: req.body.categoria,
-			length: req.body.length,
-			precio: req.body.precio,
-			creado_por: usuario.id
-		},{
-			where: {
-				id: req.params.id
-			}
-		})
+		const resultValidation = validationResult(req);
+		if (resultValidation.errors.length > 0) {
+			let consultaProducto = db.Producto.findByPk(req.params.id)
+			let consultaCategorias = db.Categoria.findAll()
 
-		res.redirect('/products/'+req.params.id)
+			Promise.all([consultaProducto, consultaCategorias])
+				.then(([producto, categorias])=>{
+					res.render('products/edit', {
+						producto, 
+						categorias,
+						oldData: req.body,
+						errors: resultValidation.mapped()
+					})
+				})
+		}else{
+			const usuario = res.locals.userLogged
+			db.Producto.update({
+				nombre: req.body.nombre,
+				descripcion: req.body.descripcion,
+				image: req.file.filename,
+				categoria_id: req.body.categoria,
+				length: req.body.length,
+				precio: req.body.precio,
+				creado_por: usuario.id
+			},{
+				where: {
+					id: req.params.id
+				}
+			})
+
+			res.redirect('/products/'+req.params.id)
+		}
 
 	},
 

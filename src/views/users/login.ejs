@@ -3,19 +3,33 @@
 <link rel="stylesheet" href="/css/forms.css">
     <main>
         <div class="form-login">
-            <form action="/users/login" method="POST" class="create-form">
+            <form action="/users/login" method="POST" class="create-form" novalidate>
                 <div class="control-form">
                     <h1>INICIAR SESIÓN</h1><br><br>
+                </div>
+                <div id="listaerrores" class="text-error">
+                    <ul>
+                    </ul>
                 </div>
                 <div class="control-form">
                     <label for="username"><strong>Usuario o Correo Electrónico</strong></label>
                     <br>
                     <input type="text" name="username" id="username" class="control" minlength="3" required>
+                    <% if(locals.errors && errors.username){ %>
+                        <div class="text-error">
+                            <%= errors.username.msg %>
+                        </div>
+                    <% }%>
                 </div>
                 <div class="control-form">
                     <label for="password"><strong>Contraseña</strong></label>
                     <br>
                     <input type="password" name="password" id="password" class="control" required>
+                    <% if(locals.errors && errors.password){ %>
+                        <div class="text-error">
+                            <%= errors.password.msg %>
+                        </div>
+                    <% }%>
                 </div>
                 <div class="control-form">
                     <div class="check-form">
@@ -31,4 +45,35 @@
             </form>
         </div>
     </main>
+    <script type="text/javascript" src="/js/validator.min.js"></script>
+    <script type="text/javascript">
+        window.onload = ()=>{
+            let formulario = document.querySelector("form")
+            formulario.addEventListener("submit", (e)=>{
+                let errores = []
+                let campoUsuario = document.querySelector("#username")
+                let campoPassword = document.querySelector("#password")
+
+                if(validator.isEmpty(campoUsuario.value)){
+                    errores.push("Debe ingresar un Usuario")
+                }else if(!validator.isLength(campoUsuario.value, {min:2, max: undefined})){
+                    errores.push("Debe ingresar de Nombre más de 1 caracter")
+                }
+                
+                if(validator.isEmpty(campoPassword.value)){
+                    errores.push("Debe ingresar una Contraseña")
+                }
+
+                if(errores.length>0){
+                    e.preventDefault()
+                    let listaErrores = document.querySelector("#listaerrores ul")
+                    listaErrores.innerHTML = ""
+                    errores.forEach(error=>{
+                        listaErrores.innerHTML += "<li>"+error+"</li>"
+                    })
+                }
+            })
+
+        }
+    </script>
 <%- include('../partials/footer') %>

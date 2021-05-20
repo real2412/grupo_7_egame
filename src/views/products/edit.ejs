@@ -3,22 +3,37 @@
 <link rel="stylesheet" href="/css/forms.css">
     <main>
         <div class="form-signup">
-            <form action="/products/<%= producto.id %>/?_method=PUT" method="POST"  enctype="multipart/form-data" class="create-form">
+            <form action="/products/<%= producto.id %>/?_method=PUT" method="POST"  enctype="multipart/form-data" class="create-form" novalidate>
                 <h1>EDICIÓN DE PRODUCTO</h1><br><br>
                 <div class="control-form">
                     <label for="usuario"><strong>Nombre del Producto</strong></label>
                     <br>
                     <input type="text" name="nombre" id="id_name" class="control" value="<%= producto.nombre %>" minlength="6" required>
+                    <% if(locals.errors && errors.nombre){ %>
+                        <div class="text-error">
+                            <%= errors.nombre.msg %>
+                        </div>
+                    <% }%>
                 </div>
                 <div class="control-form">
                     <label for="usuario"><strong>Descripción</strong></label>
                     <br>
                     <input type="text" name="descripcion" id="id_description" class="control" value="<%= producto.descripcion %>" minlength="6" required>
+                    <% if(locals.errors && errors.descripcion){ %>
+                        <div class="text-error">
+                            <%= errors.descripcion.msg %>
+                        </div>
+                    <% }%>
                 </div>
                 <div class="control-form">
                     <label for="pass1"><strong>Imagen</strong></label>
                     <br>
                     <input type="file" name="image" id="id_image" class="control" value="<%= producto.image %>" required>
+                    <% if(locals.errors && errors.image){ %>
+                        <div class="text-error">
+                            <%= errors.image.msg %>
+                        </div>
+                    <% }%>
                 </div>
                 <div class="control-form">
                     <label for="pass2"><strong>Categoría</strong></label>
@@ -33,16 +48,31 @@
                             </option>
                         <% }) %>
                     </select>
+                    <% if(locals.errors && errors.categoria){ %>
+                        <div class="text-error">
+                            <%= errors.categoria.msg %>
+                        </div>
+                    <% }%>
                 </div>
                 <div class="control-form">
                     <label for="pass2"><strong>Tamaño(peso)</strong></label>
                     <br>
                     <input type="text" name="length" id="id_weight" class="control" value="<%= producto.length %>" required>
+                    <% if(locals.errors && errors.length){ %>
+                        <div class="text-error">
+                            <%= errors.length.msg %>
+                        </div>
+                    <% }%>
                 </div>
                 <div class="control-form">
                     <label for="pass2"><strong>Precio</strong></label>
                     <br>
                     <input type="text" name="precio" id="id_price" class="control" value="<%= producto.precio %>" minlength="2" required>
+                    <% if(locals.errors && errors.precio){ %>
+                        <div class="text-error">
+                            <%= errors.precio.msg %>
+                        </div>
+                    <% }%>
                 </div>
                 <div class="form-button">
                     <a href="/products/<%= producto.id %>" class="btn-form">

@@ -13,6 +13,11 @@
                 <h1>REGISTRATE</h1>
                 <br>
                 <br>
+                <div id="listaerrores" class="text-error">
+                    <ul>
+                    </ul>
+                </div>
+                <br>
                 <div class="control-form">
                     <label for="first_name"><strong>Primer Nombre</strong></label>
                     <br>
@@ -156,4 +161,60 @@
             </form>
         </div>
     </main>
+    <script type="text/javascript" src="/js/validator.min.js"></script>
+    <script type="text/javascript">
+        window.onload = ()=>{
+            let formulario = document.querySelector("form")
+            formulario.addEventListener("submit", (e)=>{
+                let errores = []
+                let campoFirstName = document.querySelector("#first_name")
+                let campoLastName = document.querySelector("#last_name")
+                let campoEmail = document.querySelector("#email")
+                let campoPassword = document.querySelector("#pass1")
+                let campoImage = document.querySelector("#image")
+
+                if(validator.isEmpty(campoFirstName.value)){
+                    errores.push("Debe ingresar un Nombre")
+                }else if(!validator.isLength(campoFirstName.value, {min:2, max: undefined})){
+                    errores.push("Debe ingresar de Nombre más de 1 caracter")
+                }
+                
+                if(validator.isEmpty(campoLastName.value)){
+                    errores.push("Debe ingresar un Apellido")
+                }else if(!validator.isLength(campoLastName.value, {min:2, max: undefined})){
+                    errores.push("Debe ingresar de Apellido más de 1 caracter")
+                }
+
+                if(validator.isEmpty(campoEmail.value)){
+                    errores.push("Debe ingresar un email")
+                }else if(!validator.isEmail(campoEmail.value)){
+                    errores.push("Debe ingresar un email válido")
+                }
+
+                if(validator.isEmpty(campoPassword.value)){
+                    errores.push("Debe ingresar una Contraseña")
+                }else if(!validator.isLength(campoPassword.value, {min:8, max: undefined})){
+                    errores.push("Debe ingresar de Contraseña al menos 8 caracteres")
+                }
+                
+                let arrPath = campoImage.value.split(".")
+                let arrFormats = ["jpg", "jpeg", "png", "gif"]
+                if(validator.isEmpty(campoImage.value)){
+                    errores.push("Debe agregar una Imagen")
+                }else if(!arrFormats.includes(arrPath[arrPath.length-1])){
+                    errores.push("Debe ingresar una imagen con uno de los sgtes. formatos: "+arrFormats.map(f=>f))
+                }
+
+                if(errores.length>0){
+                    e.preventDefault()
+                    let listaErrores = document.querySelector("#listaerrores ul")
+                    listaErrores.innerHTML = ""
+                    errores.forEach(error=>{
+                        listaErrores.innerHTML += "<li>"+error+"</li>"
+                    })
+                }
+            })
+
+        }
+    </script>
 <%- include('../partials/footer') %>

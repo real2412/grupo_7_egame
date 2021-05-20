@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const multer = require("multer")
 const path = require('path');
+const { body} = require("express-validator")
 
 const guestMiddleware = require("../middlewares/guestMiddleware")
 const authMiddleware = require("../middlewares/authMiddleware")
@@ -22,7 +23,8 @@ let upload = multer({ storage})
 
 router.get("/login", guestMiddleware, usersController.login)
 router.get("/logout", usersController.logout)
-router.post("/login", usersController.loginAccess)
+router.post("/login", body('username').notEmpty().withMessage("Tienes que escribir un usuario"),
+body('password').notEmpty().withMessage("Tienes que escribir una constraseña"), usersController.loginAccess)
 
 router.get("/register", guestMiddleware, usersController.register)
 router.get("/profile", authMiddleware, usersController.profile)

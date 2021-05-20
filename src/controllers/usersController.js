@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs')
-const { validationResult } = require('express-validator');
+const { validationResult } = require("express-validator")
 
 let db = require("../../database/models")
 
@@ -15,6 +15,12 @@ const controller = {
     loginAccess: (req, res) => {
         const username = req.body.username
         const password = req.body.password
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+			return res.render('users/login', {
+				errors: resultValidation.mapped()
+			});
+		}
         db.Usuario.findAll()
             .then(users=>{
                 users.forEach(user=>{

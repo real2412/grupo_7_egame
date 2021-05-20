@@ -3,41 +3,101 @@
 <link rel="stylesheet" href="/css/forms.css">
     <main>
         <div class="form-signup">
-            <form action="/products" method="POST" class="create-form"  enctype="multipart/form-data">
+            <form action="/products" method="POST" class="create-form"  enctype="multipart/form-data" novalidate>
                 <h1>REGISTRO DE PRODUCTO</h1><br><br>
+                <div id="listaerrores" class="text-error">
+                    <ul>
+                    </ul>
+                </div>
+                <br>
                 <div class="control-form">
                     <label for="usuario"><strong>Nombre del Producto</strong></label>
                     <br>
-                    <input type="text" name="nombre" id="id_name" class="control" value="" minlength="6" required>
+                    <input 
+                        type="text" 
+                        name="nombre" 
+                        id="id_name" 
+                        class="control" 
+                        value="<%= locals.oldData? oldData.nombre:'' %>"
+                    >
+                    <% if(locals.errors && errors.nombre){ %>
+                        <div class="text-error">
+                            <%= errors.nombre.msg %>
+                        </div>
+                    <% }%>
                 </div>
                 <div class="control-form">
                     <label for="usuario"><strong>Descripción</strong></label>
                     <br>
-                    <input type="text" name="descripcion" id="id_description" class="control" minlength="6" required>
+                    <input 
+                        type="text" 
+                        name="descripcion" 
+                        id="id_description" 
+                        class="control" 
+                        minlength="6" 
+                        value="<%= locals.oldData? oldData.descripcion:'' %>"
+                        required
+                    >
+                    <% if(locals.errors && errors.descripcion){ %>
+                        <div class="text-error">
+                            <%= errors.descripcion.msg %>
+                        </div>
+                    <% }%>
                 </div>
                 <div class="control-form">
                     <label for="pass1"><strong>Imagen</strong></label>
                     <br>
-                    <input type="file" name="image" id="id_image" class="control" required>
+                    <input 
+                        type="file" 
+                        name="image" 
+                        id="id_image" 
+                        class="control" 
+                        required
+                    >
+                    <% if(locals.errors && errors.image){ %>
+                        <div class="text-error">
+                            <%= errors.image.msg %>
+                        </div>
+                    <% }%>
                 </div>
                 <div class="control-form">
                     <label for="pass2"><strong>Categoría</strong></label>
                     <br />
                     <select id="id_category" name="categoria">
                         <% categorias.forEach((categoria)=>{ %>
-                            <option value="<%=categoria.id%>"><%=categoria.nombre%></option>
+                            <option 
+                                value="<%=categoria.id%>"
+                                <%= locals.oldData && oldData.categoria===categoria.id+"" ? "selected":"" %>
+                            >
+                                <%=categoria.nombre%>
+                            </option>
                         <% }) %>
                     </select>
+                    <% if(locals.errors && errors.categoria){ %>
+                        <div class="text-error">
+                            <%= errors.categoria.msg %>
+                        </div>
+                    <% }%>
                 </div>
                 <div class="control-form">
                     <label for="pass2"><strong>Tamaño(peso)</strong></label>
                     <br>
                     <input type="text" name="length" id="id_weight" class="control" required>
+                    <% if(locals.errors && errors.length){ %>
+                        <div class="text-error">
+                            <%= errors.length.msg %>
+                        </div>
+                    <% }%>
                 </div>
                 <div class="control-form">
                     <label for="pass2"><strong>Precio</strong></label>
                     <br>
                     <input type="text" name="precio" id="id_price" class="control" minlength="2" required>
+                    <% if(locals.errors && errors.precio){ %>
+                        <div class="text-error">
+                            <%= errors.precio.msg %>
+                        </div>
+                    <% }%>
                 </div>
                 <div class="form-button">
                     <a href="/products" class="btn-form">CANCELAR</a>
@@ -46,4 +106,60 @@
             </form>
         </div>
     </main>
+    <script type="text/javascript" src="/js/validator.min.js"></script>
+    <script type="text/javascript">
+        window.onload = ()=>{
+            let formulario = document.querySelector("form")
+            formulario.addEventListener("submit", (e)=>{
+                let errores = []
+                let campoFirstName = document.querySelector("#first_name")
+                let campoLastName = document.querySelector("#last_name")
+                let campoEmail = document.querySelector("#email")
+                let campoPassword = document.querySelector("#pass1")
+                let campoImage = document.querySelector("#image")
+
+                if(validator.isEmpty(campoFirstName.value)){
+                    errores.push("Debe ingresar un Nombre")
+                }else if(!validator.isLength(campoFirstName.value, {min:2, max: undefined})){
+                    errores.push("Debe ingresar de Nombre más de 1 caracter")
+                }
+                
+                if(validator.isEmpty(campoLastName.value)){
+                    errores.push("Debe ingresar un Apellido")
+                }else if(!validator.isLength(campoLastName.value, {min:2, max: undefined})){
+                    errores.push("Debe ingresar de Apellido más de 1 caracter")
+                }
+
+                if(validator.isEmpty(campoEmail.value)){
+                    errores.push("Debe ingresar un email")
+                }else if(!validator.isEmail(campoEmail.value)){
+                    errores.push("Debe ingresar un email válido")
+                }
+
+                if(validator.isEmpty(campoPassword.value)){
+                    errores.push("Debe ingresar una Contraseña")
+                }else if(!validator.isLength(campoPassword.value, {min:8, max: undefined})){
+                    errores.push("Debe ingresar de Contraseña al menos 8 caracteres")
+                }
+                
+                let arrPath = campoImage.value.split(".")
+                let arrFormats = ["jpg", "jpeg", "png", "gif"]
+                if(validator.isEmpty(campoImage.value)){
+                    errores.push("Debe agregar una Imagen")
+                }else if(!arrFormats.includes(arrPath[arrPath.length-1])){
+                    errores.push("Debe ingresar una imagen con uno de los sgtes. formatos: "+arrFormats.map(f=>f))
+                }
+
+                if(errores.length>0){
+                    e.preventDefault()
+                    let listaErrores = document.querySelector("#listaerrores ul")
+                    listaErrores.innerHTML = ""
+                    errores.forEach(error=>{
+                        listaErrores.innerHTML += "<li>"+error+"</li>"
+                    })
+                }
+            })
+
+        }
+    </script>
 <%- include('../partials/footer') %>
