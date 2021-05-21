@@ -112,36 +112,20 @@
             let formulario = document.querySelector("form")
             formulario.addEventListener("submit", (e)=>{
                 let errores = []
-                let campoFirstName = document.querySelector("#first_name")
-                let campoLastName = document.querySelector("#last_name")
-                let campoEmail = document.querySelector("#email")
-                let campoPassword = document.querySelector("#pass1")
-                let campoImage = document.querySelector("#image")
+                let campoName = document.querySelector("#id_name")
+                let campoDescription = document.querySelector("#id_description")
+                let campoImage = document.querySelector("#id_image")
 
-                if(validator.isEmpty(campoFirstName.value)){
+                if(validator.isEmpty(campoName.value)){
                     errores.push("Debe ingresar un Nombre")
-                }else if(!validator.isLength(campoFirstName.value, {min:2, max: undefined})){
-                    errores.push("Debe ingresar de Nombre más de 1 caracter")
+                }else if(!validator.isLength(campoName.value, {min:5, max: undefined})){
+                    errores.push("Debe ingresar de Nombre al menos 5 caracteres")
                 }
                 
-                if(validator.isEmpty(campoLastName.value)){
-                    errores.push("Debe ingresar un Apellido")
-                }else if(!validator.isLength(campoLastName.value, {min:2, max: undefined})){
-                    errores.push("Debe ingresar de Apellido más de 1 caracter")
+                if(!validator.isLength(campoDescription.value, {min:20, max: undefined})){
+                    errores.push("Debe ingresar de Descripcion al menos 20 caracteres")
                 }
 
-                if(validator.isEmpty(campoEmail.value)){
-                    errores.push("Debe ingresar un email")
-                }else if(!validator.isEmail(campoEmail.value)){
-                    errores.push("Debe ingresar un email válido")
-                }
-
-                if(validator.isEmpty(campoPassword.value)){
-                    errores.push("Debe ingresar una Contraseña")
-                }else if(!validator.isLength(campoPassword.value, {min:8, max: undefined})){
-                    errores.push("Debe ingresar de Contraseña al menos 8 caracteres")
-                }
-                
                 let arrPath = campoImage.value.split(".")
                 let arrFormats = ["jpg", "jpeg", "png", "gif"]
                 if(validator.isEmpty(campoImage.value)){

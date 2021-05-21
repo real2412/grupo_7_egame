@@ -5,6 +5,10 @@
         <div class="form-signup">
             <form action="/products/<%= producto.id %>/?_method=PUT" method="POST"  enctype="multipart/form-data" class="create-form" novalidate>
                 <h1>EDICIÓN DE PRODUCTO</h1><br><br>
+                <div id="listaerrores" class="text-error">
+                    <ul>
+                    </ul>
+                </div>
                 <div class="control-form">
                     <label for="usuario"><strong>Nombre del Producto</strong></label>
                     <br>
@@ -83,4 +87,44 @@
             </form>
         </div>
     </main>
+    <script type="text/javascript" src="/js/validator.min.js"></script>
+    <script type="text/javascript">
+        window.onload = ()=>{
+            let formulario = document.querySelector("form")
+            formulario.addEventListener("submit", (e)=>{
+                let errores = []
+                let campoName = document.querySelector("#id_name")
+                let campoDescription = document.querySelector("#id_description")
+                let campoImage = document.querySelector("#id_image")
+
+                if(validator.isEmpty(campoName.value)){
+                    errores.push("Debe ingresar un Nombre")
+                }else if(!validator.isLength(campoName.value, {min:5, max: undefined})){
+                    errores.push("Debe ingresar de Nombre al menos 5 caracteres")
+                }
+                
+                if(!validator.isLength(campoDescription.value, {min:20, max: undefined})){
+                    errores.push("Debe ingresar de Descripcion al menos 20 caracteres")
+                }
+
+                let arrPath = campoImage.value.split(".")
+                let arrFormats = ["jpg", "jpeg", "png", "gif"]
+                if(validator.isEmpty(campoImage.value)){
+                    errores.push("Debe agregar una Imagen")
+                }else if(!arrFormats.includes(arrPath[arrPath.length-1])){
+                    errores.push("Debe ingresar una imagen con uno de los sgtes. formatos: "+arrFormats.map(f=>f))
+                }
+
+                if(errores.length>0){
+                    e.preventDefault()
+                    let listaErrores = document.querySelector("#listaerrores ul")
+                    listaErrores.innerHTML = ""
+                    errores.forEach(error=>{
+                        listaErrores.innerHTML += "<li>"+error+"</li>"
+                    })
+                }
+            })
+
+        }
+    </script>
 <%- include('../partials/footer') %>
