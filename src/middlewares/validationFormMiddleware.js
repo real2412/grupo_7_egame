@@ -8,7 +8,8 @@ const validationForm = [
     body('email').notEmpty().withMessage("Tienes que escribir un Correo").isEmail().withMessage('Debes escribir un formato de correo válido')
         .custom(async(email,{req})=>{
             let campoEmail = req.body.email
-            const usuario = db.Usuario.findOne({where: {email: email}})
+            console.log(email)
+            const usuario = await db.Usuario.findOne({where: {email: email}})
             if(usuario!==null){
                 throw new Error('Ya existe registro de este email');
             }
