@@ -1,10 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './components/Home';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
+import './styles/base.css';
+
+import Create from './components/Create';
+import Detail from './components/Detail';
+import Edit from './components/Edit';
+import Home from './components/Home';
+import List from './components/List';
+import Login from './components/Login';
+import Register from './components/Register';
+import Usuario from './components/Usuario';
+import Head from './layout/Head'
+import Footer from './layout/Footer'
 
 ReactDOM.render(
-    <Home />,
+  <BrowserRouter>
+    <Head />
+    <Switch>
+      <Route path="/" exact={true} component={Home} />
+      <Route path="/products/create" exact={true} component={Create} />
+      <Route path="/products/detail" exact={true} component={Detail} />
+    </Switch>
+    <Footer />
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

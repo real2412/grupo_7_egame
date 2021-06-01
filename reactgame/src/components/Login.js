@@ -1,10 +1,5 @@
-import Head from './Head'
-import Footer from './Footer'
-import '../styles/base.css';
 const Login = () => {
     return (
-        <>
-            <Head/>
             <main>
                 <div class="form-login">
                     <form action="/users/login" method="POST" class="create-form" novalidate>
@@ -43,8 +38,6 @@ const Login = () => {
                     </form>
                 </div>
             </main>
-            <Footer />
-        </>
     )
 }
 export default Login

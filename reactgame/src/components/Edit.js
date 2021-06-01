@@ -1,14 +1,10 @@
-import Head from './Head'
-import Footer from './Footer'
-import '../styles/base.css';
 const List = () => {
     return (
         <>
-            <Head />
             <main>
                 <div class="form-signup">
-                    <form action="/users/<%= locals.userLogged? userLogged.id:'' %>/?_method=PUT" method="POST" enctype="multipart/form-data" class="create-form" />
-                    <h1>Editar</h1><br></br>
+                    <form action="/users/" method="POST" enctype="multipart/form-data" class="create-form" >
+                    <h1>Editar</h1><br/><br/>
                     <div class="control-form">
                         <label for="first_name"><strong>Primer Nombre</strong></label><br />
                         <input
@@ -97,11 +93,12 @@ const List = () => {
                             <a href="/" class="btn-form">CANCELAR</a>
                             <button type="submit" class="btn-form">EDITAR</button>
                         </div>
+                    </div>
             </form>
                 </div>
             </main>
-            <Footer />
         </>
     )
 }
+
 export default List

@@ -1,5 +1,3 @@
-import Head from './Head'
-import Footer from './Footer'
 import '../styles/base.css';
 import ciberpunk from '../images/ciberpunk.png'
 import xbox1 from '../images/xbox1.jpg'
@@ -12,8 +10,6 @@ import cod from '../images/cod.jpg'
 import mortalcombat from '../images/mortalcombat.jpg'
 const Home = () => {
     return (
-        <>
-            <Head/>
             <main>
                 <section class="banner">
                     <div class="banner__arrow banner__arrow_left">
@@ -148,8 +144,6 @@ const Home = () => {
                     </div>
                 </section>
             </main>
-            <Footer/>
-        </>
     )
 }
 

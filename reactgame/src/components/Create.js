@@ -1,11 +1,5 @@
-
-import Head from './Head'
-import Footer from './Footer'
-import '../styles/base.css';
 const Create = () => {
     return (
-        <>
-        <Head/>
             <main>
                 <div class="form-signup">
                     <form action="/products" method="POST" class="create-form"  enctype="multipart/form-data" novalidate>
@@ -67,9 +61,7 @@ const Create = () => {
                     </form>
                 </div>
             </main>    
-<       Footer/>
-        </>
     )
 }
 
-export default Home
+export default Create

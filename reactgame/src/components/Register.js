@@ -1,10 +1,6 @@
-import Head from './Head'
-import Footer from './Footer'
-import '../styles/base.css';
 const List = () => {
     return (
         <>
-            <Head />
             <main>
                 <div class="form-signup">
                     <form
@@ -111,7 +107,6 @@ const List = () => {
                     </form>
                 </div>
             </main>
-            <Footer />
         </>
     )
 }

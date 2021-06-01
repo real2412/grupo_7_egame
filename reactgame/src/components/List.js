@@ -1,10 +1,5 @@
-import Head from './Head'
-import Footer from './Footer'
-import '../styles/base.css';
 const List = () => {
     return (
-        <>
-            <Head />
             <main>
                 <section class="titulo">
                     <h1><i class="fa fa-list"></i> Listado de Videojuegos</h1>
@@ -21,11 +16,11 @@ const List = () => {
                         <img src="/images/products/predeterminado.jpg" alt="imagen-producto" />
                         <div class="detail">
                             <div>
-                                <h2><producto.nombre /></h2>
-                                <h3><producto.categoria /></h3>
-                                <h4><producto.precio /></h4>
+                                <h2>producto.nombre </h2>
+                                <h3>producto.categoria </h3>
+                                <h4>producto.precio </h4>
                             </div>
-                            <p><producto.descripcion /></p>
+                            <p>producto.descripcion </p>
                         </div>
                         <div class="price">
                             <div>
@@ -35,8 +30,6 @@ const List = () => {
                     </article>
                 </section>
             </main>
-            <Footer />
-        </>
     )
 }
 export default List
