@@ -1,7 +1,15 @@
 import Head from './Head'
 import Footer from './Footer'
 import '../styles/base.css';
-
+import ciberpunk from '../images/ciberpunk.png'
+import xbox1 from '../images/xbox1.jpg'
+import xbox2 from '../images/xbox2.jpg'
+import xbox3 from '../images/xbox3.jpg'
+import xbox4 from '../images/xbox4.jpg'
+import ac from '../images/ac.jpg'
+import nightmares from '../images/nightmares.jpg'
+import cod from '../images/cod.jpg'
+import mortalcombat from '../images/mortalcombat.jpg'
 const Home = () => {
     return (
         <>
@@ -12,7 +20,7 @@ const Home = () => {
                         <i class="fas fa-arrow-alt-circle-left"></i>
                     </div>
                     <a href="/detalle" class="banner">
-                        <img src="images/ciberpunk.png" width="100%" height="100%" />
+                        <img src={ciberpunk} width="100%" height="100%" />
                     </a>
                     <div class="banner__arrow banner__arrow_right">
                         <i class="fas fa-arrow-alt-circle-right"></i>
@@ -29,25 +37,25 @@ const Home = () => {
                     <div class="lista__items">
                         <article class="lista__items__detalle">
                             <div class="lista__items__image">
-                                <img src="images/xbox1.jpg" width="100%" alt="imagen de categoria 1"/>
+                                <img src={xbox1} width="100%" alt="imagen de categoria 1"/>
                             </div>
                             <h3>Categoria 1</h3>
                         </article>
                         <article class="lista__items__detalle">
                             <div class="lista__items__image">
-                                <img src="images/xbox2.jpg" width="100%" alt="imagen de categoria 1" />
+                                <img src={xbox2} width="100%" alt="imagen de categoria 1" />
                             </div>
                             <h3>Categoria 2</h3>
                         </article>
                         <article class="lista__items__detalle">
                             <div class="lista__items__image">
-                                <img src="images/xbox3.jpg" width="100%" alt="imagen de categoria 1" />
+                                <img src={xbox3} width="100%" alt="imagen de categoria 1" />
                             </div>
                             <h3>Categoria 3</h3>
                         </article>
                         <article class="lista__items__detalle">
                             <div class="lista__items__image">
-                                <img src="images/xbox4.jpg" width="100%" alt="imagen de categoria 1"/>
+                                <img src={xbox4} width="100%" alt="imagen de categoria 1"/>
                             </div>
                             <h3>Categoria 4</h3>
                         </article>
@@ -59,7 +67,7 @@ const Home = () => {
                         <article class="lista__items__detalle">
                             <div class="lista__items__image">
                                 <a href="/detalle">
-                                    <img src="images/ac.jpg" width="100%" alt="imagen de categoria 1"/>
+                                    <img src={ac} width="100%" alt="imagen de categoria 1"/>
                                 </a>
                             </div>
                             <p class="ant_price">S/. 120.00</p>
@@ -78,7 +86,7 @@ const Home = () => {
                         <article class="lista__items__detalle">
                             <div class="lista__items__image">
                                 <a href="/detalle">
-                                    <img src="images/nightmares.jpg" width="100%" alt="imagen de categoria 1"/>
+                                    <img src= {nightmares} width="100%" alt="imagen de categoria 1"/>
                                 </a>
                             </div>
                             <p class="ant_price">S/. 110.00</p>
@@ -97,7 +105,7 @@ const Home = () => {
                         <article class="lista__items__detalle">
                             <div class="lista__items__image">
                                 <a href="/detalle">
-                                    <img src="images/cod.jpg" width="100%" alt="imagen de categoria 1"/>
+                                    <img src={cod} width="100%" alt="imagen de categoria 1"/>
                                 </a>
                             </div>
                             <p class="ant_price">S/. 100.00</p>
@@ -116,7 +124,7 @@ const Home = () => {
                         <article class="lista__items__detalle">
                             <div class="lista__items__image">
                                 <a href="/detalle">
-                                    <img src="images/mortalcombat.jpg" width="100%" alt="imagen de categoria 1"/>
+                                    <img src={mortalcombat} width="100%" alt="imagen de categoria 1"/>
                                 </a>
                             </div>
                             <p class="ant_price">S/. 140.00</p>
@@ -134,10 +142,8 @@ const Home = () => {
                         </article>
                     </div>
                     <div class="container-button">
-                        <a href="/listado" class="btn-standard">
-                            
-                            Ver más Videojuegos >
-                            
+                        <a href="/listado" class="btn-standard">  
+                        Ver más Videojuegos 
                         </a>
                     </div>
                 </section>
