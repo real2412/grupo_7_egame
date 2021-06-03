@@ -1,26 +1,52 @@
+import {useState} from 'react'
 
 import '../styles/base.css';
 import ciberpunk from '../images/ciberpunk.png'
+import fortnite from '../images/fortnite.png'
+import spiderman from '../images/spiderman.png'
+import cod from '../images/cod.jpg'
 import xbox1 from '../images/xbox1.jpg'
 import xbox2 from '../images/xbox2.jpg'
 import xbox3 from '../images/xbox3.jpg'
 import xbox4 from '../images/xbox4.jpg'
 import ac from '../images/ac.jpg'
 import nightmares from '../images/nightmares.jpg'
-import cod from '../images/cod.jpg'
 import mortalcombat from '../images/mortalcombat.jpg'
+
+const IMAGES = [
+    fortnite,
+    ciberpunk,
+    spiderman
+]
+
 const Home = () => {
+
+    const [banner, setBanner] = useState(0)
+
+    const handleLeft = () => {
+
+    }
+
+    const handleRight = () => {
+        
+    }
 
     return (
             <main>
                 <section class="banner">
-                    <div class="banner__arrow banner__arrow_left">
+                    <div 
+                        class="banner__arrow banner__arrow_left"
+                        onClick={handleLeft}
+                    >
                         <i class="fas fa-arrow-alt-circle-left"></i>
                     </div>
                     <a href="/detalle" class="banner">
-                        <img src={ciberpunk} width="100%" height="100%" />
+                        <img src={IMAGES[banner]} width="100%" height="100%" />
                     </a>
-                    <div class="banner__arrow banner__arrow_right">
+                    <div 
+                        class="banner__arrow banner__arrow_right"
+                        onClick={handleRight}
+                    >
                         <i class="fas fa-arrow-alt-circle-right"></i>
                     </div>
                     <div class="banner__points">

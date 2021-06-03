@@ -30,6 +30,7 @@ ReactDOM.render(
       <Route path="/products" exact={true} component={List} />
       <Route path="/users/login" exact={true} component={Login} />
       <Route path="/users/register" exact={true} component={Register} />
+      <Route path="/users/edit" exact={true} component={Usuario} />
     </Switch>
     <Footer />
   </BrowserRouter>,

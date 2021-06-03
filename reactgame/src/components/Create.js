@@ -72,12 +72,11 @@ const Create = () => {
 
 
   }
-  
+
   return (
     <main>
       <div class="form-signup">
         <form
-          action="/products"
           method="POST"
           class="create-form"
           enctype="multipart/form-data"

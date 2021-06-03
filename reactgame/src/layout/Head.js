@@ -1,9 +1,10 @@
 import {useState, useEffect} from 'react'
-import { useLocation } from "react-router-dom";
+import { useLocation,useHistory } from "react-router-dom";
 import logo from '../images/logo.png'
 
 const Head = () => {
     let location = useLocation();
+    let history = useHistory()
     const [logged, setLogged] = useState(null)
 
     useEffect(()=>{
@@ -51,6 +52,7 @@ const Head = () => {
                                 class="btn-standard"
                                 onClick={()=>{
                                     localStorage.removeItem('logged');
+                                    history.push("/")
                                 }}
                             >
                                 <i class="fa fa-sign-out-alt"></i>Cerrar Sesion
