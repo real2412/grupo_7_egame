@@ -1,6 +1,15 @@
+import {useState, useEffect} from 'react'
+import { useLocation } from "react-router-dom";
 import logo from '../images/logo.png'
 
 const Head = () => {
+    let location = useLocation();
+    const [logged, setLogged] = useState(null)
+
+    useEffect(()=>{
+        setLogged(JSON.parse(localStorage.getItem('logged')))
+    }, [location])
+
     return (
         <header>
             <nav class="navbar">
@@ -26,19 +35,27 @@ const Head = () => {
                     </li>
                 </ul>
                 <ul class="main-header-menu-right">
-                   
-                        <li>
+                    {
+                        logged? <li>
                             <a href="/products/">
                                 <label title="Login" class="btn-standard"><i class="fa fa-gamepad"></i>Administrar Videojuegos</label>
                             </a>
                             <a href="/users/profile">
-                                <label title="Login" class="btn-standard"><i class="fa fa-user"></i></label>
+                                <label title="Login" class="btn-standard">
+                                    <i class="fa fa-user"></i>
+                                    {logged.username}
+                                </label>
                             </a>
-                            <a href="/users/logout">
-                                <button title="Login" class="btn-standard"><i class="fa fa-sign-out-alt"></i>Cerrar Sesion</button>
-                            </a>
-                        </li>
-                  
+                            <button 
+                                title="Login"  
+                                class="btn-standard"
+                                onClick={()=>{
+                                    localStorage.removeItem('logged');
+                                }}
+                            >
+                                <i class="fa fa-sign-out-alt"></i>Cerrar Sesion
+                            </button>
+                        </li>:
                         <li>
                             <a href="/users/login">
                                 <button title="Login" class="btn-standard"><i class="fa fa-sign-in-alt"></i>Acceder</button>
@@ -47,9 +64,12 @@ const Head = () => {
                                 <button title="Login" class="btn-standard"><i class="fa fa-user-plus"></i>Registrar</button>
                             </a>
                         </li>
-                        <li>
-                            <a href="/carrito" title="Carrito" class="btn-standard" ><i class="fa fa-shopping-cart"></i></a>
-                        </li>
+                    }
+                  
+                    <li>
+                        <a href="/carrito" title="Carrito" class="btn-standard" ><i class="fa fa-shopping-cart"></i></a>
+                    </li>
+                        
                 </ul>
                 <a href="#" class="navbar__burger">
                     <i class="fas fa-bars"></i>

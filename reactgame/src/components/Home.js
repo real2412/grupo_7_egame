@@ -1,3 +1,4 @@
+
 import '../styles/base.css';
 import ciberpunk from '../images/ciberpunk.png'
 import xbox1 from '../images/xbox1.jpg'
@@ -9,6 +10,7 @@ import nightmares from '../images/nightmares.jpg'
 import cod from '../images/cod.jpg'
 import mortalcombat from '../images/mortalcombat.jpg'
 const Home = () => {
+
     return (
             <main>
                 <section class="banner">

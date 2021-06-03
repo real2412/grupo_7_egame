@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import './styles/base.css';
+import './styles/home.css';
+import './styles/forms.css';
+import './styles/carrito.css';
+import './styles/detalle.css';
 
 import Create from './components/Create';
 import Detail from './components/Detail';
@@ -21,7 +25,11 @@ ReactDOM.render(
     <Switch>
       <Route path="/" exact={true} component={Home} />
       <Route path="/products/create" exact={true} component={Create} />
-      <Route path="/products/detail" exact={true} component={Detail} />
+      <Route path="/products/detail/:id" exact={true} component={Detail} />
+      <Route path="/products/edit/:id" exact={true} component={Edit} />
+      <Route path="/products" exact={true} component={List} />
+      <Route path="/users/login" exact={true} component={Login} />
+      <Route path="/users/register" exact={true} component={Register} />
     </Switch>
     <Footer />
   </BrowserRouter>,

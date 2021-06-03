@@ -1,0 +1,49 @@
+.lista-pro{
+    color: var(--color-red);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.detail{
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.titulo{
+    text-align: center;
+    padding: 10px;
+}
+
+.container-detalle{
+    display: flex
+}
+
+.control-count {
+    width: 266px;
+    height: 37px;
+    border-style: solid;
+    border-radius: 2px;
+    border-width: 1px;
+    border-color: #7C01F0;
+    padding: 5px;
+    margin: 2px;
+    text-align: center;
+}
+
+.datos-detalle {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 75px;
+}
+
+.datos-descripcion {
+    text-align: justify;
+}
+
+.image-container{
+    max-width: 50%;
+}

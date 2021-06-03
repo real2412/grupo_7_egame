@@ -1,4 +1,21 @@
+import { useState, useEffect } from 'react'
+import { Link } from "react-router-dom";
+
 const List = () => {
+    const [productos, setProductos] = useState([])
+
+    useEffect(()=>{
+        fetch('http://localhost:3001/products')
+            .then((response)=>response.json())
+            .then((response)=>{
+                console.log(response)
+                setProductos(response)
+            },
+            (fail)=>{
+                console.log(fail)
+            })
+    },[])
+
     return (
             <main>
                 <section class="titulo">
@@ -10,24 +27,30 @@ const List = () => {
                     </div>
                 </section>
                 <section class="lista-prod">
-                    <article class="lista-prod-item">
-                        <img src="<%= producto.image %>" alt="imagen-producto" />
-                        <img src="/images/products/<%= producto.image %>" alt="imagen-producto" />
-                        <img src="/images/products/predeterminado.jpg" alt="imagen-producto" />
-                        <div class="detail">
-                            <div>
-                                <h2>producto.nombre </h2>
-                                <h3>producto.categoria </h3>
-                                <h4>producto.precio </h4>
-                            </div>
-                            <p>producto.descripcion </p>
-                        </div>
-                        <div class="price">
-                            <div>
-                                <a href="/products/<%= producto.id %>" class="btn-standard"><i class="fa fa-eye"></i><span class="sp-msj">Ver detalle</span></a>
-                            </div>
-                        </div>
-                    </article>
+                    {
+                        productos.map( (producto,i)=>{
+                            return (
+                                <article key={"prod-"+i} class="lista-prod-item">
+                                    <img src={"http://localhost:3001/images/products/"+producto.image} alt="imagen-producto" />
+                                    <div class="detail">
+                                        <div>
+                                            <h2> { producto.nombre } </h2>
+                                            <h3> { producto.categoria } </h3>
+                                            <h4> { producto.precio } </h4>
+                                        </div>
+                                        <p>{producto.descripcion} </p>
+                                    </div>
+                                    <div class="price">
+                                        <div>
+
+                                            <Link to={"/products/detail/"+producto.id} class="btn-standard"><i class="fa fa-eye"></i><span class="sp-msj">Ver detalle</span></Link>
+                                        </div>
+                                    </div>
+                                </article>
+                            )
+
+                        } )
+                    }
                 </section>
             </main>
     )
