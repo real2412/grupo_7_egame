@@ -24,11 +24,16 @@ const Home = () => {
     const [banner, setBanner] = useState(0)
 
     const handleLeft = () => {
+        if(banner>0){
+          setBanner(banner-1)   
+        }
 
     }
 
     const handleRight = () => {
-        
+        if(banner<IMAGES.length-1){
+         setBanner(banner+1)   
+        }
     }
 
     return (
@@ -50,10 +55,9 @@ const Home = () => {
                         <i class="fas fa-arrow-alt-circle-right"></i>
                     </div>
                     <div class="banner__points">
-                        <i class="fas fa-circle"></i>
-                        <i class="fas fa-circle"></i>
-                        <i class="fas fa-circle"></i>
-                        <i class="fas fa-circle"></i>
+                        <i class={"fas fa-circle"+(banner==0? " active":""  )}></i>
+                        <i class={"fas fa-circle"+(banner==1? " active":""  )}></i>
+                        <i class={"fas fa-circle"+(banner==2? " active":""  )}></i>
                     </div>
                 </section>
                 <section class="lista">

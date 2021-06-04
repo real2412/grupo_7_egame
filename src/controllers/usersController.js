@@ -8,17 +8,23 @@ const controller = {
         res.render('users/login')
         req.session.userLogged
     },
+    list: (req, res) => {
+        db.Usuario.findAll()
+            .then(users=>{
+                res.json(users)
+            })
+    },
     logout: (req, res) =>{
         req.session.destroy()
         res.redirect('/users/login')
     },
     loginAccess: (req, res) => {
-        const username = req.body.username
-        const password = req.body.password
-        const resultValidation = validationResult(req);
+        let username = req.body.username
+        let password = req.body.password
+        let resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
-			return res.render('users/login', {
-				errors: resultValidation.mapped()
+			return res.json({
+                errors: resultValidation.mapped()
 			});
 		}
         db.Usuario.findAll()
@@ -27,27 +33,33 @@ const controller = {
                     if( ( user.username == username || user.email == username ) && 
                         bcrypt.compareSync(password, user.password)){
                         req.session.userLogged = user
-                        res.redirect('/')
+                        res.json(user)
                     }
                 })
-                res.redirect('/users/login')
+                res.json({
+                    error: "Ocurrio un error"
+                })
             })
     },
     register: (req, res) => {
         res.render('users/register')
     },
-    profile: (req, res) => {
+    detail: (req, res) => {
         const usuario = res.locals.userLogged
-        res.render('users/profile', {usuario})
+        db.Usuario.findByPk(req.params.id)
+            .then((usuario)=>{
+                res.json({usuario})
+            }).catch((error)=>{
+                res.json({error: "Ocurrio un error"})
+            })
     },
     store: (req, res) => {
         const resultValidation = validationResult(req);
 
 		if (resultValidation.errors.length > 0) {
-			return res.render('users/register', {
-				errors: resultValidation.mapped(),
-				oldData: req.body
-			});
+			return res.json({
+				errors: resultValidation.mapped()
+			})
 		}
         const {
             first_name,
@@ -59,7 +71,7 @@ const controller = {
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
         const image = req.file.filename
-        
+
 
         db.Usuario.create({
             nombre: first_name,
@@ -68,9 +80,11 @@ const controller = {
             image,
             username,
             password: hash
+        }).then((usuario)=>{
+            res.json(usuario)
+        }).catch((error)=>{
+            res.json({error: "Ocurrio un error"})
         })
-
-        res.redirect('/users/login')
         
     },
     editar: (req, res) => {
@@ -80,9 +94,8 @@ const controller = {
 		const resultValidation = validationResult(req);
 
 		if (resultValidation.errors.length > 0) {
-			return res.render('users/register', {
-				errors: resultValidation.mapped(),
-				oldData: req.body
+			return res.json({
+				errors: resultValidation.mapped()
 			});
 		}
         const {
@@ -108,11 +121,14 @@ const controller = {
             where: {
                 id: req.params.id
             }
+        }).then(()=>{
+            res.json(objUsuario)
+        }).catch((error)=>{
+            res.json({error: "Ocurrio un error"})
         })
         objUsuario.id = req.params.id
         req.session.userLogged = objUsuario
-        res.redirect('/users/profile')
-
+        //res.redirect('/users/profile')
 	},
 }
 

@@ -43,7 +43,7 @@
     cursor: pointer;
 }
 
-.banner__points i:nth-child(1){
+.banner__points i.active{
     color: var(--color-purpura-claro);
 }
 

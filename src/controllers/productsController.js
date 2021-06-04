@@ -7,7 +7,8 @@ const controller = {
 		// Do the magic
 		db.Producto.findAll()
 			.then((productos)=>{
-				res.render('products/list', {productos})
+				//res.render('products/list', {productos})
+				res.json(productos)
 			})
 	},
 
@@ -15,15 +16,16 @@ const controller = {
 	detail: (req, res) => {
 		db.Producto.findByPk(req.params.id)
 			.then(producto=>{
-				res.render('products/detail', {producto})
+				//res.render('products/detail', {producto})
+				res.json(producto)
 			})
 	},
 
 	// Create - Form to create
-	create: (req, res) => {
+	categorias: (req, res) => {
 		db.Categoria.findAll()
 			.then((categorias)=>{
-				res.render('products/create', {categorias})
+				res.json({categorias})
 			})
 	},
 	
@@ -33,15 +35,17 @@ const controller = {
         if (resultValidation.errors.length > 0) {
 			db.Categoria.findAll()
 				.then((categorias)=>{
-					console.log(req.body);
-					return res.render('products/create', {
+					/*return res.render('products/create', {
 						categorias,
 						oldData: req.body,
+						errors: resultValidation.mapped()
+					});*/
+					return res.json({
 						errors: resultValidation.mapped()
 					});
 				})
 		}else{
-			const usuario = res.locals.userLogged
+			//const usuario = res.locals.userLogged
 			db.Producto.create({
 				nombre: req.body.nombre,
 				descripcion: req.body.descripcion,
@@ -49,9 +53,12 @@ const controller = {
 				categoria_id: req.body.categoria,
 				length: req.body.length,
 				precio: req.body.precio,
-				creado_por: usuario.id
-			}).then(()=>{
-				res.redirect('/products')
+				creado_por: req.body.creado_por//usuario.id
+			}).then((producto)=>{
+				//res.redirect('/products')
+				res.json(producto)
+			}).catch((error)=>{
+				res.json({error: "Ocurrio un error"})
 			})
 		}
 
@@ -76,30 +83,33 @@ const controller = {
 
 			Promise.all([consultaProducto, consultaCategorias])
 				.then(([producto, categorias])=>{
-					res.render('products/edit', {
-						producto, 
-						categorias,
-						oldData: req.body,
+					res.json({
 						errors: resultValidation.mapped()
 					})
 				})
 		}else{
-			const usuario = res.locals.userLogged
-			db.Producto.update({
+			//const usuario = res.locals.userLogged
+			const objProducto = {
 				nombre: req.body.nombre,
 				descripcion: req.body.descripcion,
 				image: req.file.filename,
 				categoria_id: req.body.categoria,
 				length: req.body.length,
 				precio: req.body.precio,
-				creado_por: usuario.id
-			},{
+				creado_por: req.body.creado_por
+			}
+
+			db.Producto.update(objProducto,{
 				where: {
 					id: req.params.id
 				}
+			}).then(()=>{
+				res.json(objProducto)
+			}).catch((error)=>{
+				res.json({error: "Ocurrio un error"})
 			})
 
-			res.redirect('/products/'+req.params.id)
+			//res.redirect('/products/'+req.params.id)
 		}
 
 	},
@@ -110,9 +120,13 @@ const controller = {
 			where: {
                 id: req.params.id
             }
+		}).then(()=>{
+			res.json({success: "Se realizó la eliminación"})
+		}).catch((error)=>{
+			res.json({error: "Ocurrio un error"})
 		})
 
-		res.redirect('/products/')
+		//res.redirect('/products/')
 	}
 };
 

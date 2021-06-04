@@ -7,6 +7,7 @@ const { body} = require("express-validator")
 const guestMiddleware = require("../middlewares/guestMiddleware")
 const authMiddleware = require("../middlewares/authMiddleware")
 const validationFormMiddleware = require("../middlewares/validationFormMiddleware")
+const validationFormLoginMiddleware = require("../middlewares/validationFormLoginMiddleware")
 const usersController = require("../controllers/usersController")
 
 let storage = multer.diskStorage({
@@ -22,13 +23,13 @@ let storage = multer.diskStorage({
 let upload = multer({ storage})
 
 router.get("/login", guestMiddleware, usersController.login)
-router.get("/logout", usersController.logout)
-router.post("/login", body('username').notEmpty().withMessage("Tienes que escribir un usuario"),
-body('password').notEmpty().withMessage("Tienes que escribir una constraseña"), usersController.loginAccess)
+router.get("/list", usersController.list)
+router.post("/login", validationFormLoginMiddleware, usersController.loginAccess)
 
 router.get("/register", guestMiddleware, usersController.register)
-router.get("/profile", authMiddleware, usersController.profile)
+//router.get("/profile", authMiddleware, usersController.profile)
 
+router.get('/:id', upload.single('image'), validationFormMiddleware, usersController.detail);
 router.put('/:id', upload.single('image'), validationFormMiddleware, usersController.update);
 router.get("/editar", authMiddleware, usersController.editar)
 

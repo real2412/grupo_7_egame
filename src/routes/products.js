@@ -20,21 +20,21 @@ let storage = multer.diskStorage({
 let upload = multer({ storage})
 
 /*** GET ALL PRODUCTS ***/ 
-router.get('/', authMiddleware, productsController.index); 
+router.get('/', productsController.index);//authMiddleware, productsController.index); 
 
 /*** CREATE ONE PRODUCT ***/ 
-router.get('/create', authMiddleware, productsController.create);
-router.post('/', upload.single('image'), validationFormProductsMiddleware, authMiddleware, productsController.store);//, productsController.store); 
+router.get('/categorias', productsController.categorias)//authMiddleware, productsController.categorias);
+router.post('/', upload.single('image'), validationFormProductsMiddleware, productsController.store)//authMiddleware, productsController.store);//, productsController.store); 
 
 /*** GET ONE PRODUCT ***/ 
-router.get('/:id', authMiddleware, productsController.detail); 
+router.get('/:id', productsController.detail);//authMiddleware, productsController.detail); 
 
 /*** EDIT ONE PRODUCT ***/ 
 router.get('/:id/edit', authMiddleware, productsController.edit); 
-router.put('/:id', upload.single('image'), validationFormProductsMiddleware, authMiddleware, productsController.update);
+router.put('/:id', upload.single('image'), validationFormProductsMiddleware, productsController.update);//authMiddleware, productsController.update);
 
 /*** DELETE ONE PRODUCT***/ 
-router.delete('/:id', authMiddleware, productsController.destroy); 
+router.delete('/:id', productsController.destroy);//authMiddleware, productsController.destroy); 
 
 
 module.exports = router
